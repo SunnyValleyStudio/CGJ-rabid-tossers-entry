@@ -6,7 +6,7 @@ Members | Availability | Primary and Secondary Roles
 ------------ | ------ | ------------
 Starman | (..) | 3D modelling and UI
 Eqitab | (..) | Sound fx and music
-nickflik0934 | Sound fx and music
+nickflik0934 | (..) | Sound fx and music
 Jonu_ | (..) | Programming (first time working 3d)
 PrimeTile | (..) | Programming 
 ZTIF | (3-5h per day) | Project Managment and Game Design (Backup on 2d art/generalist)
