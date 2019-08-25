@@ -1,0 +1,27 @@
+Base path: '/Applications/Unity/Hub/Editor/2019.2.2f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.2.2f1/PlaybackEngines'
+Cmd: initializeCompiler
+Cmd: translateComputeKernel
+  api=14 insize=865 outsize=805 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1348 outsize=1429 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=10881 outsize=11289 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=11289 outsize=22334 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=3396 outsize=3386 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=18299 outsize=9597 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=18299 outsize=11447 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=9375 outsize=16169 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1806 outsize=1997 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1153 outsize=1425 ok=1
+Cmd: initializeCompiler
+Cmd: compileSnippet
+  api=14 type=1 insize=2170 outsize=2929 kw=_MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _SHADOWS_SOFT _MIXED_LIGHTING_SUBTRACTIVE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+
+Quitting shader compiler process
