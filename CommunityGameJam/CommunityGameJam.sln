@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio for Mac
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimesAseembly", "PrimesAseembly.csproj", "{78E21EA7-D2C7-E45F-3A0F-3196AF4B88BF}"
 EndProject
 Global
