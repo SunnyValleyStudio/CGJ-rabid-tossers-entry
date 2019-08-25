@@ -62,6 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\IInputManagerSVS.cs" />
+    <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\InputManagerArrowsSVS.cs" />
+    <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\InputPredictorSVS.cs" />
+    <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\PlayerControllerSVS.cs" />
+    <Compile Include="Assets\IndivdualWork\Ztif\_Scripts\InputPredictorSVS_ztif.cs" />
+    <Compile Include="Assets\IndivdualWork\Ztif\_Scripts\PlayerControllerSVS_ztif.cs" />
     <Compile Include="Assets\IndivdualWork\Ztif\_Scripts\Text.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/steffenoftedal/UnityProjects/CGJ-rabid-tossers-entry/CommunityGameJam/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -125,6 +131,12 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>/Users/steffenoftedal/UnityProjects/CGJ-rabid-tossers-entry/CommunityGameJam/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>/Users/steffenoftedal/UnityProjects/CGJ-rabid-tossers-entry/CommunityGameJam/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>/Users/steffenoftedal/UnityProjects/CGJ-rabid-tossers-entry/CommunityGameJam/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Hub/Editor/2019.2.2f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
