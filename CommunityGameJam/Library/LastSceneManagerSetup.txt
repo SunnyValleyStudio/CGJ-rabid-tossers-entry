@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/IndivdualWork/Ztif/Prototyping.unity
+- path: Assets/IndivdualWork/SunnyVS/Scene/FlockSceneSVS.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
