@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/IndivdualWork/SunnyVS/Scene/FlockSceneSVS.unity
+- path: Assets/IndivdualWork/Red/blood.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
