@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc778e5cd8b004448c08be571a12580, type: 3}
+  m_Name: KeepInCenterFlockBehaviourSVS
+  m_EditorClassIdentifier: 
+  behaviours:
+  - {fileID: 11400000, guid: 010e79de49e44b84cbc6c4b6a594e53a, type: 2}
+  - {fileID: 11400000, guid: dc6c6ef86ac1bd8448cbc05927d4086a, type: 2}
+  - {fileID: 11400000, guid: 86456272f8d5a7f4d9bc9fbf6c8e5a11, type: 2}
+  - {fileID: 11400000, guid: 3fd51dd0b6d0d4c4b987f5eb0c3257bc, type: 2}
+  - {fileID: 11400000, guid: b8e920e27a67ebf4e82641c23be4fee6, type: 2}
+  behaviourWeights:
+  - 4
+  - 1.5
+  - 1
+  - 0.5
+  - 5

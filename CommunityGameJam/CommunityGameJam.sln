@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio for Mac
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{248C8682-5B46-BF6B-7FB4-FE8CE5F60A09}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimesAseembly", "PrimesAseembly.csproj", "{78E21EA7-D2C7-E45F-3A0F-3196AF4B88BF}"
 EndProject
 Global
@@ -9,6 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{248C8682-5B46-BF6B-7FB4-FE8CE5F60A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{248C8682-5B46-BF6B-7FB4-FE8CE5F60A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{248C8682-5B46-BF6B-7FB4-FE8CE5F60A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{248C8682-5B46-BF6B-7FB4-FE8CE5F60A09}.Release|Any CPU.Build.0 = Release|Any CPU
 		{78E21EA7-D2C7-E45F-3A0F-3196AF4B88BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{78E21EA7-D2C7-E45F-3A0F-3196AF4B88BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78E21EA7-D2C7-E45F-3A0F-3196AF4B88BF}.Release|Any CPU.ActiveCfg = Release|Any CPU

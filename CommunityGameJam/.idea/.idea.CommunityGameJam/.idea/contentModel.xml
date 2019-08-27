@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.2/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_CommunityGameJam.1912464831.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="IndivdualWork" t="Include">
+          <e p="Prime" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Door.cs" t="Include" />
+              <e p="FireLightChanger.cs" t="Include" />
+              <e p="Headbob.cs" t="Include" />
+              <e p="Interfaces.cs" t="Include" />
+              <e p="Movement.cs" t="Include" />
+              <e p="RayCastCamera.cs" t="Include" />
+            </e>
+          </e>
+          <e p="SunnyVS" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Flocking" t="Include">
+                <e p="BehaviourScripts" t="Include">
+                  <e p="AlignmentSVS.cs" t="Include" />
+                  <e p="AvoidancePhysicsSVS.cs" t="Include" />
+                  <e p="AvoidanceSVS.cs" t="Include" />
+                  <e p="CohesionSVS.cs" t="Include" />
+                  <e p="CompositeBehaviourSVS.cs" t="Include" />
+                </e>
+                <e p="CompositeSVS.cs" t="Include" />
+                <e p="ContextFilterSVS.cs" t="Include" />
+                <e p="FilterScripts" t="Include">
+                  <e p="PhysicsLayerFilterSVS.cs" t="Include" />
+                  <e p="SameFlockFilterSVS.cs" t="Include" />
+                </e>
+                <e p="FlockAgentSVS.cs" t="Include" />
+                <e p="FlockingBehaviourSVS.cs" t="Include" />
+                <e p="FlockSVS.cs" t="Include" />
+                <e p="StayInRadiusBehaviourSVS.cs" t="Include" />
+                <e p="SteeredCohesionBehaviourSVS.cs" t="Include" />
+              </e>
+              <e p="IInputManagerSVS.cs" t="Include" />
+              <e p="InputManagerArrowsSVS.cs" t="Include" />
+              <e p="InputPredictorSVS.cs" t="Include" />
+              <e p="PlayerControllerSVS.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Ztif" t="Include">
+            <e p="Old" t="Include">
+              <e p="_Scripts" t="Include">
+                <e p="InputPredictorSVS_ztif.cs" t="Include" />
+                <e p="PlayerControllerSVS_ztif.cs" t="Include" />
+                <e p="Text.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="CameraController.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="CommunityGameJam.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="PrimesAseembly.csproj" t="IncludeRecursive" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
