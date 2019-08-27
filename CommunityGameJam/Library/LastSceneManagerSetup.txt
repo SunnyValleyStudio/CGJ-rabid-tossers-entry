@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/IndivdualWork/Ztif/SheepHerder.unity
+- path: Assets/IndivdualWork/SunnyVS/Scene/Flocking3dSVS.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

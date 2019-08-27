@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3399292602373578209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3399292602373578214}
+  - component: {fileID: 3399292602373578215}
+  m_Layer: 0
+  m_Name: Flock3d
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3399292602373578214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3399292602373578209}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.1927457, y: -4.478968, z: -6.6924706}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3399292602373578215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3399292602373578209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c28e757b42856b841b23b1b4a25e4c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentPrefab: {fileID: 9041283024171140761, guid: f59b64e5563b76a4a8a3045b08bba6bb,
+    type: 3}
+  behaviour: {fileID: 11400000, guid: 4815119e06efa484bb560f6096adc93b, type: 2}
+  startingFlockSize: 10
+  driveFactor: 10
+  maxSpeed: 5
+  neighbourRadious: 3
+  avoidanceRadiousMultiplier: 0.5
+  filter: {fileID: 11400000, guid: 7fc5fdfaea4d4ee429a343f0e63a6ee3, type: 2}
+  useFilter: 0
+  physicsFilter: {fileID: 11400000, guid: b268cf0d5dbdc1d41971b59e9029742c, type: 2}
+  usePhysicsFilter: 0
+  player: {fileID: 0}
+  otherGameobjectToFollow: []
