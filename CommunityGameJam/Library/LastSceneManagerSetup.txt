@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/IndivdualWork/SunnyVS/Scene/Flocking3dSVS.unity
+- path: Assets/IndivdualWork/SunnyVS/Scene/Jonu's scenSVS.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

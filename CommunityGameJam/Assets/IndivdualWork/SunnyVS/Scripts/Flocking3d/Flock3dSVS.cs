@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -15,7 +16,7 @@ namespace SVSFlocking
 
         [Range(0, 500)]
         public int startingFlockSize = 50;
-        const float _agentDensity = 0.08f;
+        const float _agentDensity = 0.5f;
 
         [Range(1f, 100f)]
         public float driveFactor = 10f;
@@ -54,9 +55,10 @@ namespace SVSFlocking
 
             for (int i = 0; i < startingFlockSize; i++)
             {
-                Vector3 position = Random.insideUnitCircle * startingFlockSize * _agentDensity;
+                Vector3 position = transform.position + Random.insideUnitSphere*4* startingFlockSize * _agentDensity;
+                position = new Vector3(position.x, transform.position.y-0.8f, position.z);
                 Quaternion rotation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
-                FlockAgent3dSVS newAgent = Instantiate(agentPrefab, new Vector3(position.x,0,position.y), rotation, transform);
+                FlockAgent3dSVS newAgent = Instantiate(agentPrefab, position, rotation, transform);
                 int nameRandomChoiceVal = Random.Range(0, 3);
                 newAgent.name = names[nameRandomChoiceVal] + i;
                 newAgent.Initialize(this);
@@ -68,6 +70,7 @@ namespace SVSFlocking
         {
             MoveAgents();
             SplitAgent();
+            CheckForDead();
         }
 
         private void SplitAgent()
@@ -80,8 +83,7 @@ namespace SVSFlocking
                     currentTime = 0;
                     FlockAgent3dSVS agentToSplit = _agents[_agents.Count - 1];
                     agentToSplit.Initialize(lostFlockGroup, true);
-                    agentToSplit.GetComponent<Renderer>().material.shader = Shader.Find("_Color");
-                    agentToSplit.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+
 
                 }
             }
@@ -102,6 +104,10 @@ namespace SVSFlocking
         {
             foreach (FlockAgent3dSVS agent in _agents)
             {
+                if (agent.isDead)
+                {
+                    continue;
+                }
                 List<Transform> contextOfNeighbourRadious = GetNearbyObjects(agent);
 
                 //TESTING
@@ -140,6 +146,12 @@ namespace SVSFlocking
         public void RemoveAgent(FlockAgent3dSVS agent)
         {
             _agents.Remove(agent);
+        }
+
+        private void CheckForDead()
+        {
+
+            _agents = _agents.Where(x => !x.isDead).ToList();
         }
     }
 }

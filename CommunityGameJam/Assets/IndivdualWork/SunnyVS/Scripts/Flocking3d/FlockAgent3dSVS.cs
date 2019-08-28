@@ -9,7 +9,7 @@ namespace SVSFlocking
         private Collider _agentCollider;
         Flock3dSVS agentFlockGroup;
         private bool lost;
-
+        public bool isDead;
         public Collider AgentCollider { get => _agentCollider; private set => _agentCollider = value; }
         public Flock3dSVS AgentFlockGroup { get => agentFlockGroup; set => agentFlockGroup = value; }
 

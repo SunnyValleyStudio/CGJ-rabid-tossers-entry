@@ -62,6 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\IndivdualWork\Jonu\CameraControl.cs" />
+    <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\CameraFollowSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\Flocking\BehaviourScripts\AlignmentSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\Flocking\BehaviourScripts\AvoidancePhysicsSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\Flocking\BehaviourScripts\AvoidanceSVS.cs" />
@@ -94,10 +96,13 @@
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\Flocking3d\FlockAgent3dSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\Flocking3d\FlockingBehaviour3dSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\Flocking3d\PlayerFLockingSVS.cs" />
+    <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\FollowWolfSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\IInputManagerSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\InputManagerArrowsSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\InputPredictorSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\PlayerControllerSVS.cs" />
+    <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\PlayerInputSVS.cs" />
+    <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\WolfActionsSVS.cs" />
     <Compile Include="Assets\IndivdualWork\Ztif\Old\_Scripts\InputPredictorSVS_ztif.cs" />
     <Compile Include="Assets\IndivdualWork\Ztif\Old\_Scripts\PlayerControllerSVS_ztif.cs" />
     <Compile Include="Assets\IndivdualWork\Ztif\Old\_Scripts\Text.cs" />
