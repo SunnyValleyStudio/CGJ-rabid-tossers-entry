@@ -107,6 +107,7 @@
     <Compile Include="Assets\IndivdualWork\Ztif\Old\_Scripts\PlayerControllerSVS_ztif.cs" />
     <Compile Include="Assets\IndivdualWork\Ztif\Old\_Scripts\Text.cs" />
     <Compile Include="Assets\IndivdualWork\Ztif\Scripts\CameraController.cs" />
+    <Compile Include="Assets\IndivdualWork\Ztif\Scripts\TargetMovement.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/steffenoftedal/UnityProjects/CGJ-rabid-tossers-entry/CommunityGameJam/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
