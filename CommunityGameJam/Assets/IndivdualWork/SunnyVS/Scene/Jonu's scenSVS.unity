@@ -152,6 +152,7 @@ MonoBehaviour:
     m_Bits: 2048
   wolfRadius: 3
   breakUpDistance: 10
+  sheepSpeed: 6
 --- !u!1 &64161053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1235,7 @@ GameObject:
   - component: {fileID: 1179313089}
   - component: {fileID: 1179313088}
   m_Layer: 0
-  m_Name: SheppardFlock
+  m_Name: ShepherdFlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
