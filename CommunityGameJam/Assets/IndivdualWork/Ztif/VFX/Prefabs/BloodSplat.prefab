@@ -3385,7 +3385,7 @@ ParticleSystem:
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
-    multiplyColliderForceByCollisionAngle: 1
+    multiplyColliderForceByCollisionAngle: 0
     plane0: {fileID: 0}
     plane1: {fileID: 0}
     plane2: {fileID: 0}
@@ -3553,12 +3553,12 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 2
+    radiusScale: 1
     collidesWith:
       serializedVersion: 2
       m_Bits: 4096
     maxCollisionShapes: 256
-    quality: 2
+    quality: 1
     voxelSize: 2
     collisionMessages: 0
     collidesWithDynamic: 1
@@ -4571,7 +4571,7 @@ GameObject:
   - component: {fileID: 8687694641615815915}
   - component: {fileID: 8689451980132659469}
   m_Layer: 0
-  m_Name: FleshHitEffect
+  m_Name: BloodSplat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14299,7 +14299,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.6603774, g: 0.034264866, b: 0.034264866, a: 0.6784314}
+      maxColor: {r: 0.6037736, g: 0.03702387, b: 0.03702387, a: 0.81960785}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -18895,7 +18895,7 @@ ParticleSystemRenderer:
   m_RenderMode: 2
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 1
+  m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
