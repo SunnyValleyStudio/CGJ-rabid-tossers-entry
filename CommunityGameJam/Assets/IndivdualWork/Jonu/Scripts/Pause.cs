@@ -11,6 +11,12 @@ public class Pause : MonoBehaviour
     // pause panel's script
     public Panel pausePanel;
 
+    // win panel
+    public Panel winPanel;
+
+    // lose panel
+    public Panel losePanel;
+
     // if the game was started (main menu is hidden)
     bool started = false;
 
@@ -58,5 +64,22 @@ public class Pause : MonoBehaviour
     {
         // load the active scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    // when the game is won
+    public void Won()
+    {
+        winPanel.Enter();
+
+
+        Static.paused = true;
+    }
+
+    // when the game is lost
+    public void Lost()
+    {
+        losePanel.Enter();
+
+        Static.paused = true;
     }
 }

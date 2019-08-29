@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SheepSound
+public class Sound
 {
     public AudioClip clip;
     public float chance;
 }
 
-public class SheepSounds : MonoBehaviour
+public class Sounds : MonoBehaviour
 {
     // volume will be randomly set to between those two
     public float volumeMin;
     public float volumeMax;
 
     // sounds
-    public SheepSound[] sounds;
+    public Sound[] sounds;
 
 
     // number of clips
@@ -44,6 +44,7 @@ public class SheepSounds : MonoBehaviour
         */
     }
 
+    // play a random sound
     public void Play()
     {
         size = sounds.Length;
