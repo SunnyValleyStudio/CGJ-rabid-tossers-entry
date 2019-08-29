@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3652326494348233780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 357176628986068519}
+  - component: {fileID: 9002660847064217792}
+  m_Layer: 0
+  m_Name: Seed - Rocks
+  m_TagString: Seed
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &357176628986068519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3652326494348233780}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9002660847064217792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3652326494348233780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8124e54b9cfc4af4fbdb4a37f84020be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantGameObjects:
+  - {fileID: 5423158624868213856, guid: 7dfb16fb563ee42cab42f5566c2af24d, type: 3}
+  - {fileID: 7654929548222087514, guid: c1b2e93f301e84db88776ac49406d9ec, type: 3}
+  - {fileID: 8730542243726354422, guid: 57fd07fb586f44c4d8e8c5628273463c, type: 3}
+  seedRangeCustomizer: 4
+  densityCustomizer: 0.1
+  rangeScale: {x: 0.4, y: 2}
+  layerControl:
+    serializedVersion: 2
+    m_Bits: 4294967295

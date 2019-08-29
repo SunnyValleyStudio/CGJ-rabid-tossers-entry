@@ -62,10 +62,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\IndivdualWork\Jonu\CameraControl.cs" />
-    <Compile Include="Assets\IndivdualWork\Jonu\Panel.cs" />
-    <Compile Include="Assets\IndivdualWork\Jonu\Pause.cs" />
-    <Compile Include="Assets\IndivdualWork\Jonu\Static.cs" />
+    <Compile Include="Assets\IndivdualWork\Jonu\Scripts\CameraControl.cs" />
+    <Compile Include="Assets\IndivdualWork\Jonu\Scripts\Panel.cs" />
+    <Compile Include="Assets\IndivdualWork\Jonu\Scripts\Pause.cs" />
+    <Compile Include="Assets\IndivdualWork\Jonu\Scripts\Sounds.cs" />
+    <Compile Include="Assets\IndivdualWork\Jonu\Scripts\Static.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\CameraFollowSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\Flocking\BehaviourScripts\AlignmentSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\Flocking\BehaviourScripts\AvoidancePhysicsSVS.cs" />
@@ -112,16 +113,24 @@
     <Compile Include="Assets\IndivdualWork\Ztif\Old\_Scripts\Text.cs" />
     <Compile Include="Assets\IndivdualWork\Ztif\Scripts\CameraController.cs" />
     <Compile Include="Assets\IndivdualWork\Ztif\Scripts\TargetMovement.cs" />
+    <None Include="Assets\3rd Party Assets\Photosynthesizer\Sample Assets\Shaders\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\3rd Party Assets\Photosynthesizer\Sample Assets\Shaders\Matte Foliage.shader" />
+    <None Include="Assets\3rd Party Assets\Photosynthesizer\Sample Assets\Shaders\Matte Triplanar Vertex Color Blended.shader" />
+    <None Include="Assets\3rd Party Assets\Photosynthesizer\Sample Assets\Shaders\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\3rd Party Assets\Photosynthesizer\Sample Assets\Shaders\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\3rd Party Assets\Photosynthesizer\Sample Assets\Shaders\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\3rd Party Assets\Photosynthesizer\Sample Assets\Shaders\Matte Triplanar.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\IndivdualWork\Ztif\Shaders\ztif_ParticlesUnlit.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
@@ -732,6 +741,10 @@
     <ProjectReference Include="PrimesAseembly.csproj">
       <Project>{78E21EA7-D2C7-E45F-3A0F-3196AF4B88BF}</Project>
       <Name>PrimesAseembly</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.alexismorin.photosynthesizer.csproj">
+      <Project>{B567EEAB-9DE7-3FD9-5E14-104139D7FB17}</Project>
+      <Name>com.alexismorin.photosynthesizer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
