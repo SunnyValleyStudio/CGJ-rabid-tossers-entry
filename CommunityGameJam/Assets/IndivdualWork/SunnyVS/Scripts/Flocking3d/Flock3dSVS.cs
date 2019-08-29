@@ -140,6 +140,7 @@ namespace SVSFlocking
 
         public void AddAgent(FlockAgent3dSVS agent)
         {
+            agent.isDead = false;
             _agents.Add(agent);
         }
 
@@ -152,6 +153,12 @@ namespace SVSFlocking
         {
 
             _agents = _agents.Where(x => !x.isDead).ToList();
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, allowedDistanceFromFlockObject);
         }
     }
 }

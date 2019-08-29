@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/IndivdualWork/Ztif/Sheepherder_day 5.unity
+- path: Assets/IndivdualWork/SunnyVS/Scene/Sheepherder_SVS.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

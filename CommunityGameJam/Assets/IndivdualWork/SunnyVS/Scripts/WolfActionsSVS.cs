@@ -13,6 +13,7 @@ namespace SVSWolf
         public float breakUpDistance = 10f;
         public float sheepSpeed = 6f;
         private GameObject sheepFollowing = null;
+        public Flock3dSVS flock;
         
         // Start is called before the first frame update
         void Start()
@@ -39,7 +40,11 @@ namespace SVSWolf
                 if (Vector3.Distance(sheepFollowing.transform.position, transform.position) > breakUpDistance)
                 {
                     sheepFollowing.GetComponent<FollowWolfSVS>().target = null;
+
+                    flock.AddAgent(sheepFollowing.GetComponent<FlockAgent3dSVS>());
+
                     sheepFollowing = null;
+                    
 
                 }
             }
