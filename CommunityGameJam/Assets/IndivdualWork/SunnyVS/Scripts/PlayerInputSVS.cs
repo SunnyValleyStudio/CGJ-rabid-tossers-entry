@@ -15,8 +15,9 @@ namespace SVSInput
         // Update is called once per frame
         void Update()
         {
-            horizontal = Input.GetAxis("Horizontal");
-            vertical = Input.GetAxis("Vertical");
+            // Jonu - added an axis for the wolf's movement - WASD
+            horizontal = Input.GetAxis("WolfHorizontal");
+            vertical = Input.GetAxis("WolfVertical");
             
         }
 
