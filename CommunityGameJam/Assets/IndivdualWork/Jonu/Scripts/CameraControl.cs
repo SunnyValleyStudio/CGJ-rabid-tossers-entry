@@ -43,10 +43,10 @@ public class CameraControl : MonoBehaviour
     public float zoomSpeed = 10;
 
     // key codes to use
-    private KeyCode UpKey = KeyCode.W;
-    private KeyCode DownKey = KeyCode.S;
-    private KeyCode RightKey = KeyCode.D;
-    private KeyCode LeftKey = KeyCode.A;
+    private KeyCode UpKey = KeyCode.UpArrow;
+    private KeyCode DownKey = KeyCode.DownArrow;
+    private KeyCode RightKey = KeyCode.RightArrow;
+    private KeyCode LeftKey = KeyCode.LeftArrow;
     private KeyCode RotateRightKey = KeyCode.E;
     private KeyCode RotateLeftKey = KeyCode.Q;
     private KeyCode ResetKey = KeyCode.R;
