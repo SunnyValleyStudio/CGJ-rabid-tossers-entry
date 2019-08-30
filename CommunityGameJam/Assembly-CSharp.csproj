@@ -102,6 +102,7 @@
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\Flocking3d\FlockingBehaviour3dSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\Flocking3d\PlayerFLockingSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\FollowWolfSVS.cs" />
+    <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\GameManagerSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\GuardsAI\GuardAISVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\IInputManagerSVS.cs" />
     <Compile Include="Assets\IndivdualWork\SunnyVS\Scripts\InputManagerArrowsSVS.cs" />

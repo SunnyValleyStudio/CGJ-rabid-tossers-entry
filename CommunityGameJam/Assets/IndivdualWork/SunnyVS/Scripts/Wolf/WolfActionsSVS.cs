@@ -6,6 +6,7 @@ using SVSGuards;
 using SVSAI;
 using SVSPredictor;
 using SVSInput;
+using SVSGame;
 
 namespace SVSWolf
 {
@@ -135,6 +136,7 @@ namespace SVSWolf
                     currentKeyVector = Vector3.zero;
                     accuracy = ((float)(positiveGuesses) / (positiveGuesses + negativeGuesses));
                     Debug.Log("Algorithm accuracy: " + accuracy);
+                    GameManagerSVS.instance.UpdateFightingMenu(Mathf.Clamp(currentFightTime, 0, fightTime), accuracy);
                 }
                 else
                 {
@@ -147,6 +149,7 @@ namespace SVSWolf
                     timeFromLastClick = 0;
                     accuracy = ((float)(positiveGuesses) / (positiveGuesses + negativeGuesses));
                     Debug.Log("Algorithm accuracy: " + accuracy);
+                    GameManagerSVS.instance.UpdateFightingMenu(Mathf.Clamp(currentFightTime, 0, fightTime), accuracy);
                 }
 
                 currentFightTime += Time.deltaTime;
@@ -156,6 +159,8 @@ namespace SVSWolf
                     isFighting = false;
                     lastPrediction = Vector3.zero;
                     Debug.Log("END FIGHT ACCURACY: " + accuracy);
+                    GameManagerSVS.instance.UpdateFightingMenu(Mathf.Clamp(currentFightTime,0,fightTime), accuracy);
+                    GameManagerSVS.instance.FightOff();
                     if (accuracy <= algorithmAccuracyLimitToWin)
                     {
                         OnWInFight();
@@ -199,6 +204,7 @@ namespace SVSWolf
 
         public void StartAFight()
         {
+            GameManagerSVS.instance.FightOn(fightTime);
             if (lastPrediction == Vector3.zero)
             {
                 lastPrediction = GetVectorFromInput(KeyForFighting1);
@@ -218,10 +224,12 @@ namespace SVSWolf
             if (fightingShip)
             {
                 sheepFollowing = null;
+                GameManagerSVS.instance.Killed(EnemyType.Sheep);
             }
             else
             {
                 followingGuard = null;
+                GameManagerSVS.instance.Killed(EnemyType.Dog);
             }
             fightingShip = false;
 
@@ -238,6 +246,7 @@ namespace SVSWolf
             gameObject.SetActive(false);
             transform.position = startingPosition;
             gameObject.SetActive(true);
+            GameManagerSVS.instance.LoseLift();
         }
 
         private Vector3 GetVectorFromInput(KeyCode code)
