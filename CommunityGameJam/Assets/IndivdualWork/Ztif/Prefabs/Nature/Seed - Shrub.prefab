@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 357176628986068519}
   - component: {fileID: 9002660847064217792}
   m_Layer: 0
-  m_Name: Seed - Shrub (1)
+  m_Name: Seed - Shrub
   m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,9 +50,13 @@ MonoBehaviour:
   - {fileID: 8730542243726354422, guid: 57fd07fb586f44c4d8e8c5628273463c, type: 3}
   - {fileID: 758001543190090605, guid: e7ccbe75c3db749f6b4e33683a1cf98d, type: 3}
   - {fileID: 1436463736858534950, guid: cdc4349e165c94a9188d347cc8ba01b2, type: 3}
+  - {fileID: 5423158624868213856, guid: 7dfb16fb563ee42cab42f5566c2af24d, type: 3}
+  - {fileID: 7654929548222087514, guid: c1b2e93f301e84db88776ac49406d9ec, type: 3}
+  - {fileID: 8730542243726354422, guid: 57fd07fb586f44c4d8e8c5628273463c, type: 3}
+  - {fileID: 1436463736858534950, guid: cdc4349e165c94a9188d347cc8ba01b2, type: 3}
   seedRangeCustomizer: 4
   densityCustomizer: 0.1
   rangeScale: {x: 0.4, y: 1}
   layerControl:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4096

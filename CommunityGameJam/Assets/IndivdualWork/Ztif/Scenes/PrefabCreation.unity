@@ -468,6 +468,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &234715891083063817
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8509783456712743280, guid: 8c5f27947d96a4f33ae2d698ebf7f569,
+        type: 3}
+      propertyPath: m_Name
+      value: Colliderblock
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639612104629754803, guid: 8c5f27947d96a4f33ae2d698ebf7f569,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639612104629754803, guid: 8c5f27947d96a4f33ae2d698ebf7f569,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639612104629754803, guid: 8c5f27947d96a4f33ae2d698ebf7f569,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639612104629754803, guid: 8c5f27947d96a4f33ae2d698ebf7f569,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639612104629754803, guid: 8c5f27947d96a4f33ae2d698ebf7f569,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639612104629754803, guid: 8c5f27947d96a4f33ae2d698ebf7f569,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639612104629754803, guid: 8c5f27947d96a4f33ae2d698ebf7f569,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639612104629754803, guid: 8c5f27947d96a4f33ae2d698ebf7f569,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639612104629754803, guid: 8c5f27947d96a4f33ae2d698ebf7f569,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639612104629754803, guid: 8c5f27947d96a4f33ae2d698ebf7f569,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639612104629754803, guid: 8c5f27947d96a4f33ae2d698ebf7f569,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8c5f27947d96a4f33ae2d698ebf7f569, type: 3}
 --- !u!1001 &7543050984345289369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -479,6 +548,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CliffGroup_Big_Access_oneside_edgy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7543050983840061893, guid: 9438efce1d69449e9b0a77d9014e24a8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7543050983840061892, guid: 9438efce1d69449e9b0a77d9014e24a8,
         type: 3}
