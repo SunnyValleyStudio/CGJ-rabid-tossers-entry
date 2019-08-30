@@ -59,6 +59,7 @@ namespace SVSFlocking
                 position = new Vector3(position.x, transform.position.y-0.8f, position.z);
                 Quaternion rotation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
                 FlockAgent3dSVS newAgent = Instantiate(agentPrefab, position, rotation, transform);
+                newAgent.originFlock = this;
                 int nameRandomChoiceVal = Random.Range(0, 3);
                 newAgent.name = names[nameRandomChoiceVal] + i;
                 newAgent.Initialize(this);

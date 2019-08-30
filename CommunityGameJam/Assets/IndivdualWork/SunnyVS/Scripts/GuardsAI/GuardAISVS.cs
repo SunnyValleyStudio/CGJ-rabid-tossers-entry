@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SVSAI;
+using SVSWolf;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +8,8 @@ using UnityEngine.AI;
 
 namespace SVSGuards
 {
-    public class GuardAISVS : MonoBehaviour
+    [RequireComponent(typeof(NavMeshAgent))]
+    public class GuardAISVS : MonoBehaviour, IAttackableSVS
     {
         public Transform player;
         public float playerDistance;
@@ -14,7 +17,7 @@ namespace SVSGuards
         public float aiChaseDIstance = 20f;
         public float AIMovementSpeed;
         public float damping;
-        public float caughtPlayerStoppingDistance = 2f;
+        float caughtPlayerStoppingDistance = 4f;
         
 
         public Transform[] navPoint;
@@ -33,6 +36,7 @@ namespace SVSGuards
             {
                 agent.destination = goal.position;
             }
+            
             else if (agent.destination == null && navPoint.Length>0)
             {
                 goal = navPoint[0];
@@ -40,7 +44,7 @@ namespace SVSGuards
 
             }
             agent.autoBraking = false;
-
+            player = FindObjectOfType<WolfActionsSVS>().transform;
         }
 
         private void Update()
@@ -60,6 +64,15 @@ namespace SVSGuards
                         if(hit.collider.gameObject == player.gameObject)
                         {
                             playerInSIght = true;
+                            if (player == null)
+                            {
+                                player = FindObjectOfType<WolfActionsSVS>().transform;
+                                if(player == null)
+                                {
+                                    return;
+                                }
+                            }
+                            player.gameObject.GetComponent<WolfActionsSVS>().SetGuardFollow(this);
                         }
                     }
                 }
@@ -71,21 +84,45 @@ namespace SVSGuards
             {
                 if (playerDistance < aiChaseDIstance)
                 {
-                    Chase();
+                    
                     if (playerDistance < caughtPlayerStoppingDistance)
                     {
-                        player.gameObject.SetActive(false);
-                        playerInSIght = false;
+                        WolfActionsSVS wolfScript = player.gameObject.GetComponent<WolfActionsSVS>();
+                        if (wolfScript.isFighting == false)
+                        {
+                            
+                            wolfScript.StartAFight();
+                        }
+                        else if(wolfScript.followingGuard != this)
+                        {
+                            wolfScript.FInishFightBeforeTime();
+                        }
+
+                    }
+                    else
+                    {
+                        Chase();
                     }
                 }
                 else
                 {
                     playerInSIght = false;
+                    if (player == null)
+                    {
+                        player = FindObjectOfType<WolfActionsSVS>().transform;
+                        if (player == null)
+                        {
+                            TravelToNextPoint();
+                            return;
+                        }
+                    }
+                    player.gameObject.GetComponent<WolfActionsSVS>().ResetGuardFollowing(); ;
                     TravelToNextPoint();
                 }
             }
 
-            if (agent.remainingDistance < 0.5f)
+            
+            if (agent.isOnNavMesh &&agent.isStopped == false && agent.remainingDistance < 0.5f)
             {
                 TravelToNextPoint();
             }
@@ -126,6 +163,19 @@ namespace SVSGuards
         {
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(transform.position,aiAwarnessDistance);
+        }
+
+        public void OnWInFight()
+        {
+            playerInSIght = false;
+            TravelToNextPoint();
+            Debug.Log("Guard won - respawn wolf?");
+        }
+
+        public void OnLoseFight()
+        {
+            Destroy(gameObject);
+            Debug.Log("Guard down");
         }
     }
 }

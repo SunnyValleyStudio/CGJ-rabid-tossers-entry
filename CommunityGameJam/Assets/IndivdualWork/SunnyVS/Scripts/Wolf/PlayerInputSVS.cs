@@ -11,6 +11,7 @@ namespace SVSInput
         public CharacterController controller;
         public float rotationSpeed = 3.0f;
         public float speed = 3.0f;
+        public bool movementBlockDuringFIght = false;
 
         // Update is called once per frame
         void Update()
@@ -23,10 +24,14 @@ namespace SVSInput
 
         private void FixedUpdate()
         {
-            transform.Rotate(0, horizontal * rotationSpeed, 0);
-            float curSpeed = speed * vertical;
-            Vector3 forward = transform.TransformDirection(Vector3.forward);
-            controller.SimpleMove(forward * curSpeed);
+            if (movementBlockDuringFIght == false)
+            {
+                transform.Rotate(0, horizontal * rotationSpeed, 0);
+                float curSpeed = speed * vertical;
+                Vector3 forward = transform.TransformDirection(Vector3.forward);
+                controller.SimpleMove(forward * curSpeed);
+            }
+            
         }
     }
 }

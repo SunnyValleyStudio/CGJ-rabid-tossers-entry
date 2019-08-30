@@ -30,7 +30,7 @@ namespace SVSPredictor
 
         int _positiveGuesses = 0;
         int _negativeGuesses = 0;
-        
+
 
         public Vector3 PredictNextInput(Vector3 input)
         {
@@ -38,8 +38,8 @@ namespace SVSPredictor
             if (_recentInputs.Count >= 5)
             {
                 InputTypeClass inputCountsForThisSequence = _predictionModel[_recentInputs.Take(5).ToList()];
-                UpdateModelIfLastPredictionWasInvalid(input, inputCountsForThisSequence);
-                Debug.Log("Average prediction score: " + ((float)(_positiveGuesses) / (_positiveGuesses+_negativeGuesses)));
+                UpdateModel(input, inputCountsForThisSequence);
+                //Debug.Log("Average prediction score: " + ((float)(_positiveGuesses) / (_positiveGuesses+_negativeGuesses)));
                 _recentInputs.RemoveFirst();
                 _recentInputs.AddLast(input);
                 inputCountsForThisSequence = _predictionModel[_recentInputs.ToList()];
@@ -63,17 +63,9 @@ namespace SVSPredictor
             return tempPrediction;
         }
 
-        private void UpdateModelIfLastPredictionWasInvalid(Vector3 input, InputTypeClass inputCountsForThisSequence)
+        private void UpdateModel(Vector3 input, InputTypeClass inputCountsForThisSequence)
         {
-            bool wasLastPredictionValid = false;
-            if (Vector3.Distance(_recentPredictedInput, input) < 0.01f)
-            {
-                wasLastPredictionValid = true;
-                _positiveGuesses++;
-            }
-            if (wasLastPredictionValid == false)
-            {
-                _negativeGuesses++;
+
                 if (Vector3.Distance(_positiveInput, input) < 0.01f)
                 {
                     inputCountsForThisSequence.Positive++;
@@ -82,7 +74,7 @@ namespace SVSPredictor
                 {
                     inputCountsForThisSequence.Negative++;
                 }
-            }
+            
         }
 
         /// <summary>
@@ -120,6 +112,18 @@ namespace SVSPredictor
             List<List<Vector3>> _allSequencesList = CreateAll32Sequences(inputExample);
             FillInPredictionModelDictionary(_allSequencesList);
             SequenceReady = true;
+            for (int i = 0; i < 5; i++)
+            {
+                int val = UnityEngine.Random.Range(0, 2);
+                if (val == 0)
+                {
+                    _recentInputs.AddLast(_negativeInput);
+                }
+                else
+                {
+                    _recentInputs.AddLast(_positiveInput);
+                }
+            }
         }
 
         /// <summary>
@@ -168,6 +172,15 @@ namespace SVSPredictor
             foreach (var sequence in _allSequencesList)
             {
                 _predictionModel.Add(sequence, new InputTypeClass());
+                int val = UnityEngine.Random.Range(0, 2);
+                if (val == 0)
+                {
+                    _predictionModel[sequence].Negative++;
+                }
+                else
+                {
+                    _predictionModel[sequence].Positive++;
+                }
             }
         }
 

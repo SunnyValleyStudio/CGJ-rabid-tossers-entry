@@ -39,6 +39,7 @@ namespace SVSPlayer
             else if (movementVector.magnitude == 0)
             {
                 LastInput = Vector3.zero;
+
             }
         }
 
