@@ -16,6 +16,11 @@ namespace SVSFlocking
             }
             foreach(Transform item in context)
             {
+                //if (LayerMask.LayerToName(item.gameObject.layer)=="ObstacleSVS")
+                //{
+                //    Debug.Log(LayerMask.LayerToName(item.gameObject.layer));
+                //    filtered.Add(item);
+                //}
                 if(mask == (mask | (1<< item.gameObject.layer)))
                 {
                     filtered.Add(item);

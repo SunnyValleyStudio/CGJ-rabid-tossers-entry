@@ -16,7 +16,7 @@ namespace SVSFlocking
 
         [Range(0, 500)]
         public int startingFlockSize = 50;
-        const float _agentDensity = 0.5f;
+        const float _agentDensity = 0.2f;
 
         [Range(1f, 100f)]
         public float driveFactor = 10f;

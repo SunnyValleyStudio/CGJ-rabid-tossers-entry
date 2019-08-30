@@ -30,7 +30,9 @@ namespace SVSWolf
                 if (contextColliders.Length > 0)
                 {
                     sheepFollowing = contextColliders[0].gameObject;
+                    flock = sheepFollowing.GetComponent<FlockAgent3dSVS>().AgentFlockGroup;
                     sheepFollowing.GetComponent<FlockAgent3dSVS>().isDead = true;
+                    
                     sheepFollowing.GetComponent<FollowWolfSVS>().target = gameObject;
                     sheepFollowing.GetComponent<FollowWolfSVS>().speed = sheepSpeed;
                 }

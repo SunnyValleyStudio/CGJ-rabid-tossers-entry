@@ -12,10 +12,11 @@ namespace SVSFlocking
         public bool isDead;
         public Collider AgentCollider { get => _agentCollider; private set => _agentCollider = value; }
         public Flock3dSVS AgentFlockGroup { get => agentFlockGroup; set => agentFlockGroup = value; }
-
+        private CharacterController movementController;
         private void Awake()
         {
             AgentCollider = GetComponent<Collider>();
+            //movementController = GetComponent<CharacterController>();
         }
 
         public void Initialize(Flock3dSVS flock, bool lost = false)
@@ -33,11 +34,22 @@ namespace SVSFlocking
             //3d transform.forward
             transform.forward = velocity;
             transform.position += velocity * Time.deltaTime;
+            //movementController.Move(velocity * Time.deltaTime);
         }
 
         public bool GetIsLost()
         {
             return lost;
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            if (agentFlockGroup != null)
+            {
+                Gizmos.color = Color.cyan;
+                Gizmos.DrawWireSphere(transform.position, agentFlockGroup.neighbourRadious);
+            }
+            
         }
     }
 }

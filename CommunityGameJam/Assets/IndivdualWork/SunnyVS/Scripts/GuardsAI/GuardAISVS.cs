@@ -112,7 +112,12 @@ namespace SVSGuards
             }
             else
             {
+                if (navPoint[destPoint] == null)
+                {
+                    destPoint = 0;
+                }
                 agent.destination = navPoint[destPoint].position;
+                
                 destPoint = (destPoint + 1) % navPoint.Length;
             }
         }

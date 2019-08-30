@@ -30,12 +30,26 @@ namespace SVSFlocking
             int neighboursToAvoid = 0;
             foreach (Transform item in context)
             {
-                if(Vector3.SqrMagnitude(item.position-flockAgent.transform.position) < flock.SquareAvoidanceRadious)
+                
+                Debug.DrawRay(flockAgent.transform.position, flockAgent.transform.forward * flock.SquareAvoidanceRadious, Color.red);
+                RaycastHit hit;
+
+                if (Physics.Raycast(flockAgent.transform.position, flockAgent.transform.forward, out hit, flock.SquareAvoidanceRadious))
                 {
-                    neighboursToAvoid++;
-                    avoidanceMove += (flockAgent.transform.position-item.position);
-                    
+                    Vector3 direction = hit.point - flockAgent.transform.position;
+                    if (LayerMask.LayerToName(hit.collider.gameObject.layer)=="ObstacleSVS")
+                    {
+                        neighboursToAvoid++;
+                        avoidanceMove -= direction*2;
+                    }
                 }
+                //if (Vector3.SqrMagnitude(item.position-flockAgent.transform.position) < flock.SquareAvoidanceRadious)
+                //{
+                    
+                //    neighboursToAvoid++;
+                //    avoidanceMove += (flockAgent.transform.position-item.position);
+                    
+                //}
                 
             }
             if (neighboursToAvoid > 0)

@@ -93,8 +93,8 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &62775042210406685
-CapsuleCollider:
+--- !u!143 &8726717293816283653
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,11 +102,15 @@ CapsuleCollider:
   m_GameObject: {fileID: 6627729613432066910}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.1450275
-  m_Height: 2.5966692
-  m_Direction: 1
-  m_Center: {x: 0.010746629, y: 1.2983346, z: -0.21388242}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.75
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0.22, y: 1.01, z: 0}
 --- !u!114 &2506754525457878078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,8 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b83cc2c96de8f74ea579780500b8050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  offset: {x: 0.5, y: 0.5}
+  speed: 4
+  offsetFromTarget: 3
   target: {fileID: 0}
 --- !u!114 &7888853590583668553
 MonoBehaviour:
@@ -135,6 +139,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
+--- !u!136 &4822148728504119169
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6627729613432066910}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6837334
+  m_Height: 1.8350409
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9468219, z: 0}
 --- !u!1 &3743912030058844397
 GameObject:
   m_ObjectHideFlags: 0
