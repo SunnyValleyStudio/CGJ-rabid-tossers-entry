@@ -11,10 +11,11 @@ namespace SVSGame
     }
     public class GameManagerSVS : MonoBehaviour
     {
-       
+        AudioSource listener;      
         public static GameManagerSVS instance;
         Level level;
-
+        public AudioClip[] clips;
+        int currentCLipIndex = -1;
         private void Awake()
         {
             if (instance == null)
@@ -25,11 +26,13 @@ namespace SVSGame
             {
                 Destroy(gameObject);
             }
+            listener = GetComponent<AudioSource>();
         }
 
         private void Start()
         {
             level = FindObjectOfType<Level>();
+            PlaySound();
         }
 
         public void Killed(EnemyType enemyType)
@@ -56,6 +59,45 @@ namespace SVSGame
         {
             Debug.Log("Hide fighting ui");
         }
+
+        private void PlaySound()
+        {
+            if (clips.Length > 0)
+            {
+                if (currentCLipIndex < 0)
+                {
+                    currentCLipIndex = 0;
+
+                }
+                currentCLipIndex++;
+                if (currentCLipIndex >= clips.Length)
+                {
+                    currentCLipIndex = 0;
+                }
+                else
+                {
+                    
+                }
+                listener.clip = clips[currentCLipIndex];
+                listener.Play();
+                Invoke("PlaySound", listener.clip.length);
+            }
+            
+        }
+
+        public void StopSound()
+        {
+            listener.Pause();
+        }
+
+        public void RestartSound()
+        {
+            listener.UnPause();
+        }
+
+        
+
+
     }
 }
 
