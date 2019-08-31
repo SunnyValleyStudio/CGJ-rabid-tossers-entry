@@ -117,6 +117,7 @@
     <Compile Include="Assets\IndivdualWork\Ztif\Old\_Scripts\Text.cs" />
     <Compile Include="Assets\IndivdualWork\Ztif\Scripts\AimAtMouse.cs" />
     <Compile Include="Assets\IndivdualWork\Ztif\Scripts\CameraController.cs" />
+    <Compile Include="Assets\IndivdualWork\Ztif\Scripts\destroyMe.cs" />
     <Compile Include="Assets\IndivdualWork\Ztif\Scripts\instantiateEffectCaller.cs" />
     <Compile Include="Assets\IndivdualWork\Ztif\Scripts\Speedometer.cs" />
     <Compile Include="Assets\IndivdualWork\Ztif\Scripts\TargetMovement.cs" />

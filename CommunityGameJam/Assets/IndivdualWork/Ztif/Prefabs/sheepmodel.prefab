@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8362457546684852647}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &4543346641569489282
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: df01834e1e8284fa699fcfb11bbfa6ce, type: 2}
   - {fileID: 974091553841463527, guid: 62805e51c422c435a8ec923a50e03dc2, type: 3}
   - {fileID: 2100000, guid: a79bbf211d96e43168bf94c740e24140, type: 2}
-  - {fileID: -3401741675640445777, guid: 62805e51c422c435a8ec923a50e03dc2, type: 3}
+  - {fileID: 2100000, guid: 8ac8b62655d4b412fbcfa2b5ee860eb2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,7 +96,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: d601c39407ce641d7ac9d21770ca105e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

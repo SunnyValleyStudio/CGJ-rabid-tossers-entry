@@ -4570,6 +4570,7 @@ GameObject:
   - component: {fileID: 8809390639148027281}
   - component: {fileID: 8687694641615815915}
   - component: {fileID: 8689451980132659469}
+  - component: {fileID: 5063312456359177663}
   m_Layer: 0
   m_Name: BloodSplat
   m_TagString: Untagged
@@ -9320,6 +9321,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &5063312456359177663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8814841365579177031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a09047d22254d128c13e3101c10060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathtimer: 30
 --- !u!1 &8815050678175263329
 GameObject:
   m_ObjectHideFlags: 0
