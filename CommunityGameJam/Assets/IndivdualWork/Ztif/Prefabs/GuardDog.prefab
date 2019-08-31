@@ -14799,6 +14799,7 @@ Transform:
   - {fileID: 7614124194500197796}
   - {fileID: 507208647649507847}
   - {fileID: 3718933099336521626}
+  - {fileID: 3170741203977078445}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14870,6 +14871,7 @@ MonoBehaviour:
   fieldOfViewAngle: 110
   playerInSIght: 0
   isFIghting: 0
+  particleBlood: {fileID: 3176473472073881467}
 --- !u!114 &6586721239684959524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19972,4 +19974,90 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5234073563713697088, guid: a903fea51593b41f39fce980b57838f2,
     type: 3}
   m_PrefabInstance: {fileID: 4744227552805776856}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6215392240180546364
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6586721239861316423}
+    m_Modifications:
+    - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8814841365579177031, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_Name
+      value: BloodSplat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8814841365579177031, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 127fb677db07741bcbb8f069e002bbc9, type: 3}
+--- !u!1 &3176473472073881467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8814841365579177031, guid: 127fb677db07741bcbb8f069e002bbc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 6215392240180546364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3170741203977078445 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 6215392240180546364}
   m_PrefabAsset: {fileID: 0}

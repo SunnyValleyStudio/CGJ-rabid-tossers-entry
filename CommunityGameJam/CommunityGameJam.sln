@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio for Mac
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{248C8682-5B46-BF6B-7FB4-FE8CE5F60A09}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.alexismorin.photosynthesizer", "com.alexismorin.photosynthesizer.csproj", "{B567EEAB-9DE7-3FD9-5E14-104139D7FB17}"

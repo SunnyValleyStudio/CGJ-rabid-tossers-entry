@@ -1,6 +1,7 @@
 ﻿using SVSAI;
 using SVSGame;
 using SVSWolf;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,7 @@ namespace SVSFlocking
         private CharacterController movementController;
         NavMeshAgent agentAI = null;
         bool isREturningHome = false;
+        public GameObject particleBlood;
         private void Awake()
         {
             AgentCollider = GetComponent<Collider>();
@@ -118,6 +120,11 @@ namespace SVSFlocking
         public void ReaddAgentToOldFlock()
         {
             originFlock.AddAgent(this);
+        }
+
+        internal void EnableBlood()
+        {
+            particleBlood.SetActive(true);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace SVSGuards
         public float fieldOfViewAngle = 110f;
         public bool playerInSIght;
         public bool isFIghting = false;
-
+        public GameObject particleBlood;
 
         private void Start()
         {
@@ -191,6 +191,11 @@ namespace SVSGuards
             GameManagerSVS.instance.Killed(EnemyType.Dog);
             Destroy(gameObject);
             //Debug.Log("Guard down");
+        }
+
+        public void EnableBlood()
+        {
+            particleBlood.SetActive(true);
         }
     }
 }
