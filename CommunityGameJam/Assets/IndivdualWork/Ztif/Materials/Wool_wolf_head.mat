@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wool
+  m_Name: Wool 1
   m_Shader: {fileID: -6465566751694194690, guid: c2581aa8e9e5e428f9673658e1c4655b,
     type: 3}
   m_ShaderKeywords: 
@@ -137,7 +137,7 @@ Material:
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _DesignColor: {r: 0.90959036, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PaintColor: {r: 1, g: 1, b: 1, a: 1}
+    - _PaintColor: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _WorldSpaceLightPos0: {r: 2.26, g: 0.5, b: 0, a: 0}
 --- !u!114 &4285398733346935640
