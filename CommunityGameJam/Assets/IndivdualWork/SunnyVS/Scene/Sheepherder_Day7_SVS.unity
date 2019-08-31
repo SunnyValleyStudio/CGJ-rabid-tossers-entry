@@ -108,7 +108,7 @@ NavMeshSettings:
     agentRadius: 1
     agentHeight: 2
     agentSlope: 45
-    agentClimb: 0.5
+    agentClimb: 1.65
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -799,8 +799,10 @@ MonoBehaviour:
   maxInputDelay: 0.5
   fightTime: 5
   startingOrcleScoreValues: 50
-  algorithmAccuracyLimitToWin: 0.52
+  algorithmAccuracyLimitToWin: 0.658
   maxDistanceToAttack: 4
+  isTired: 0
+  tiredStateLength: 3
 --- !u!114 &31223352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23157,7 +23159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079904672}
   m_LocalRotation: {x: -0.025776684, y: -0.8592647, z: 0.04351229, w: -0.50902516}
-  m_LocalPosition: {x: 4.2290807, y: 0.78238964, z: -4.30746}
+  m_LocalPosition: {x: 5.43, y: 0.78238964, z: -7.37}
   m_LocalScale: {x: 0.00005183618, y: 0.00005183616, z: 0.00005183617}
   m_Children: []
   m_Father: {fileID: 1433528936}

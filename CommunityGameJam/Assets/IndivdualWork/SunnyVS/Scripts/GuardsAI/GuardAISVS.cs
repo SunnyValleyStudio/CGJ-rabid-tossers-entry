@@ -19,7 +19,7 @@ namespace SVSGuards
         public float agentSpeedDefault = 3.5f;
         public float AIChaseSpeed = 10f;
         public float damping;
-        float caughtPlayerStoppingDistance = 6f;
+        float caughtPlayerStoppingDistance = 3f;
         
 
         public Transform[] navPoint;
