@@ -20,7 +20,7 @@ namespace SVSGuards
         public float AIChaseSpeed = 10f;
         public float damping;
         float caughtPlayerStoppingDistance = 3f;
-        
+
 
         public Transform[] navPoint;
         public NavMeshAgent agent;
@@ -29,17 +29,18 @@ namespace SVSGuards
 
         public float fieldOfViewAngle = 110f;
         public bool playerInSIght;
-        
+        public bool isFIghting = false;
+
 
         private void Start()
         {
             agent = GetComponent<NavMeshAgent>();
-            if (goal!=null)
+            if (goal != null)
             {
                 agent.destination = goal.position;
             }
-            
-            else if (agent.destination == null && navPoint.Length>0)
+
+            else if (agent.destination == null && navPoint.Length > 0)
             {
                 goal = navPoint[0];
                 agent.destination = goal.position;
@@ -52,84 +53,88 @@ namespace SVSGuards
 
         private void Update()
         {
-            playerDistance = Vector3.Distance(player.position, transform.position);
-            if (playerDistance < aiAwarnessDistance)
+            if (isFIghting == false)
             {
-                Vector3 direction = player.transform.position - transform.position;
-                float angle = Vector3.Angle(direction, transform.forward);
-                if (angle < fieldOfViewAngle * 0.5f)
+                playerDistance = Vector3.Distance(player.position, transform.position);
+                if (playerDistance < aiAwarnessDistance)
                 {
-                    RaycastHit hit;
-                    Debug.DrawRay(transform.position, direction.normalized* aiAwarnessDistance, Color.red);
-                    if (Physics.Raycast(transform.position,direction.normalized,out hit, aiAwarnessDistance))
+                    Vector3 direction = player.transform.position - transform.position;
+                    float angle = Vector3.Angle(direction, transform.forward);
+                    if (angle < fieldOfViewAngle * 0.5f)
                     {
-                        
-                        if(hit.collider.gameObject == player.gameObject)
+                        RaycastHit hit;
+                        Debug.DrawRay(transform.position, direction.normalized * aiAwarnessDistance, Color.red);
+                        if (Physics.Raycast(transform.position, direction.normalized, out hit, aiAwarnessDistance))
                         {
-                            playerInSIght = true;
-                            if (player == null)
+
+                            if (hit.collider.gameObject == player.gameObject)
                             {
-                                player = FindObjectOfType<WolfActionsSVS>().transform;
-                                if(player == null)
+                                playerInSIght = true;
+                                if (player == null)
                                 {
-                                    return;
+                                    player = FindObjectOfType<WolfActionsSVS>().transform;
+                                    if (player == null)
+                                    {
+                                        return;
+                                    }
                                 }
+                                player.gameObject.GetComponent<WolfActionsSVS>().SetGuardFollow(this);
                             }
-                            player.gameObject.GetComponent<WolfActionsSVS>().SetGuardFollow(this);
                         }
                     }
+                    RotateTOwardsNoise();
+
                 }
-                RotateTOwardsNoise();
 
-            }
-
-            if (playerInSIght)
-            {
-                if (playerDistance < aiChaseDIstance)
+                if (playerInSIght)
                 {
-                    
-                    if (playerDistance <= caughtPlayerStoppingDistance)
+                    if (playerDistance < aiChaseDIstance)
                     {
-                        agent.isStopped = true;
-                        
-                        WolfActionsSVS wolfScript = player.gameObject.GetComponent<WolfActionsSVS>();
-                        if (wolfScript.isFighting == false)
-                        {
-                            
-                            wolfScript.StartAFight();
-                        }
-                        else if(wolfScript.followingGuard != this || wolfScript.sheepFollowing!=null)
-                        {
-                            wolfScript.FInishFightBeforeTime();
-                        }
 
+                        if (playerDistance <= caughtPlayerStoppingDistance)
+                        {
+                            agent.isStopped = true;
+
+                            WolfActionsSVS wolfScript = player.gameObject.GetComponent<WolfActionsSVS>();
+                            if (wolfScript.isFighting == false || wolfScript.isTired == false)
+                            {
+
+                                wolfScript.StartAFight();
+                                isFIghting = true;
+                            }
+                            else if (wolfScript.isTired || wolfScript.followingGuard != this || wolfScript.sheepFollowing != null)
+                            {
+                                wolfScript.FInishFightBeforeTime();
+                            }
+
+                        }
+                        else
+                        {
+                            Chase();
+                        }
                     }
                     else
                     {
-                        Chase();
-                    }
-                }
-                else
-                {
-                    playerInSIght = false;
-                    if (player == null)
-                    {
-                        player = FindObjectOfType<WolfActionsSVS>().transform;
+                        playerInSIght = false;
                         if (player == null)
                         {
-                            TravelToNextPoint();
-                            return;
+                            player = FindObjectOfType<WolfActionsSVS>().transform;
+                            if (player == null)
+                            {
+                                TravelToNextPoint();
+                                return;
+                            }
                         }
+                        player.gameObject.GetComponent<WolfActionsSVS>().ResetGuardFollowing(); ;
+                        TravelToNextPoint();
                     }
-                    player.gameObject.GetComponent<WolfActionsSVS>().ResetGuardFollowing(); ;
+                }
+
+
+                if (agent.isOnNavMesh && agent.isStopped == false && agent.remainingDistance < 0.5f)
+                {
                     TravelToNextPoint();
                 }
-            }
-
-            
-            if (agent.isOnNavMesh &&agent.isStopped == false && agent.remainingDistance < 0.5f)
-            {
-                TravelToNextPoint();
             }
         }
 
@@ -162,7 +167,7 @@ namespace SVSGuards
                     destPoint = 0;
                 }
                 agent.destination = navPoint[destPoint].position;
-                
+
                 destPoint = (destPoint + 1) % navPoint.Length;
             }
         }
@@ -170,7 +175,7 @@ namespace SVSGuards
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(transform.position,aiAwarnessDistance);
+            Gizmos.DrawWireSphere(transform.position, aiAwarnessDistance);
         }
 
         public void OnWInFight()
@@ -178,6 +183,7 @@ namespace SVSGuards
             playerInSIght = false;
             TravelToNextPoint();
             Debug.Log("Guard won - respawn wolf?");
+            isFIghting = false;
         }
 
         public void OnLoseFight()

@@ -46,11 +46,13 @@ namespace SVSWolf
         [Tooltip("How long before wolf can fight again")]
         public float tiredStateLength = 3f;
         float waitedAfterWasTiredTime = 0;
-
+        public GameObject wolf_sheep;
+        public GameObject wolf_no_sheep;
 
         // Start is called before the first frame update
         void Start()
         {
+            SetTired(true);
             predictionInputSystem = GetComponent<InputPredictorSVS>();
             predictionInputSystem.PrepareThePredictorClass(Vector3.forward);
             startingPosition = transform.position;
@@ -61,42 +63,43 @@ namespace SVSWolf
         // Update is called once per frame
         void Update()
         {
-            if (Static.paused==false)
+            if (Static.paused == false)
             {
                 if (isTired)
                 {
                     waitedAfterWasTiredTime += Time.deltaTime;
                     if (waitedAfterWasTiredTime >= tiredStateLength)
                     {
-                        isTired = false;
+                        SetTired(false);
                         waitedAfterWasTiredTime = 0;
                     }
                 }
 
                 if (isFighting == false)
                 {
-                    if (sheepFollowing == null)
-                    {
-                        Collider[] contextColliders = Physics.OverlapSphere(transform.position, wolfRadius, sheepMask);
-                        if (contextColliders.Length > 0)
-                        {
-                            sheepFollowing = contextColliders[0].gameObject;
-                            sheepFollowing.GetComponent<FlockAgent3dSVS>().StartFollowingWOlf(gameObject, sheepSpeed);
-                        }
-                    }
-                    else
-                    {
-                        if (Vector3.Distance(sheepFollowing.transform.position, transform.position) > breakUpDistance)
-                        {
-
-                            sheepFollowing.GetComponent<FlockAgent3dSVS>().StopFollowingWolf();
-                            sheepFollowing = null;
-
-
-                        }
-                    }
                     if (isTired == false)
                     {
+                        if (sheepFollowing == null)
+                        {
+                            Collider[] contextColliders = Physics.OverlapSphere(transform.position, wolfRadius, sheepMask);
+                            if (contextColliders.Length > 0)
+                            {
+                                sheepFollowing = contextColliders[0].gameObject;
+                                sheepFollowing.GetComponent<FlockAgent3dSVS>().StartFollowingWOlf(gameObject, sheepSpeed);
+                            }
+                        }
+                        else
+                        {
+                            if (Vector3.Distance(sheepFollowing.transform.position, transform.position) > breakUpDistance)
+                            {
+
+                                sheepFollowing.GetComponent<FlockAgent3dSVS>().StopFollowingWolf();
+                                sheepFollowing = null;
+
+
+                            }
+                        }
+
                         if ((sheepFollowing != null && (Vector3.Distance(sheepFollowing.transform.position, gameObject.transform.position) < maxDistanceToAttack))
                                                 || (followingGuard != null && (Vector3.Distance(followingGuard.transform.position, gameObject.transform.position) < maxDistanceToAttack))
                                                 )
@@ -133,7 +136,7 @@ namespace SVSWolf
                             }
                         }
                     }
-                    
+
 
                 }
                 else
@@ -187,18 +190,17 @@ namespace SVSWolf
                         Debug.Log("END FIGHT ACCURACY: " + accuracy);
                         GameManagerSVS.instance.UpdateFightingMenu(Mathf.Clamp(currentFightTime, 0, fightTime), accuracy);
                         GameManagerSVS.instance.FightOff();
-                        isTired = true;
+                        SetTired(true);
                         waitedAfterWasTiredTime = 0;
                         if (accuracy <= algorithmAccuracyLimitToWin)
                         {
-                            
+
                             OnWInFight();
-                            
+
                             currentlyAttackedUnit.OnLoseFight();
                         }
                         else
                         {
-                            isTired = false;
                             OnLoseFight();
                             currentlyAttackedUnit.OnWInFight();
                         }
@@ -235,32 +237,38 @@ namespace SVSWolf
 
         public void StartAFight()
         {
-            GameManagerSVS.instance.FightOn(fightTime);
-            if (lastPrediction == Vector3.zero)
+            if (isFighting == false)
             {
-                lastPrediction = GetVectorFromInput(KeyForFighting1);
+                wolf_no_sheep.SetActive(true);
+                wolf_sheep.SetActive(false);
+                GameManagerSVS.instance.FightOn(fightTime);
+                if (lastPrediction == Vector3.zero)
+                {
+                    lastPrediction = GetVectorFromInput(KeyForFighting1);
+                }
+                if (currentlyAttackedUnit == null)
+                {
+                    currentlyAttackedUnit = (IAttackableSVS)followingGuard;
+                }
+                positiveGuesses = startingOrcleScoreValues;
+                negativeGuesses = startingOrcleScoreValues;
+                Debug.Log("Staring a fight");
+                isFighting = true;
+                GetComponent<PlayerInputSVS>().movementBlockDuringFIght = isFighting;
             }
-            if (currentlyAttackedUnit == null)
-            {
-                currentlyAttackedUnit = (IAttackableSVS)followingGuard;
-            }
-            positiveGuesses = startingOrcleScoreValues;
-            negativeGuesses = startingOrcleScoreValues;
-            Debug.Log("Staring a fight");
-            isFighting = true;
-            GetComponent<PlayerInputSVS>().movementBlockDuringFIght = isFighting;
+            
         }
         public void OnWInFight()
         {
             if (fightingSheep)
             {
                 sheepFollowing = null;
-                
+
             }
             else
             {
                 followingGuard = null;
-                
+
             }
             fightingSheep = false;
 
@@ -270,14 +278,25 @@ namespace SVSWolf
         public void OnLoseFight()
         {
             GetComponent<PlayerInputSVS>().movementBlockDuringFIght = false;
+            if (fightingSheep)
+            {
+                sheepFollowing = null;
 
-            sheepFollowing = null;
+            }
+            else
+            {
+                
 
-            followingGuard = null;
-            gameObject.SetActive(false);
-            transform.position = startingPosition;
-            gameObject.SetActive(true);
-            GameManagerSVS.instance.LoseLift();
+                sheepFollowing = null;
+                SetTired(false);
+                followingGuard = null;
+                gameObject.SetActive(false);
+                transform.position = startingPosition;
+                gameObject.SetActive(true);
+                GameManagerSVS.instance.LoseLift();
+
+            }
+
         }
 
         private Vector3 GetVectorFromInput(KeyCode code)
@@ -304,6 +323,21 @@ namespace SVSWolf
             currentlyAttackedUnit.OnWInFight();
 
             currentlyAttackedUnit = null;
+        }
+
+        private void SetTired(bool val)
+        {
+            if (val)
+            {
+                wolf_no_sheep.SetActive(true);
+                wolf_sheep.SetActive(false);
+            }
+            else
+            {
+                wolf_no_sheep.SetActive(false);
+                wolf_sheep.SetActive(true);
+            }
+            isTired = val;
         }
     }
 }
