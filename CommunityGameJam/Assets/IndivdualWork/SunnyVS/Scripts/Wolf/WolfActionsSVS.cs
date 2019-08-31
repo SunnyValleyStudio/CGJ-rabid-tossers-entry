@@ -18,7 +18,7 @@ namespace SVSWolf
         public float wolfRadius = 3f;
         public float breakUpDistance = 10f;
         public float sheepSpeed = 6f;
-        private GameObject sheepFollowing = null;
+        public GameObject sheepFollowing = null;
         public Flock3dSVS flock;
         public GuardAISVS followingGuard;
         public bool isFighting = false;
@@ -32,12 +32,14 @@ namespace SVSWolf
         float currentFightTime = 0;
         float accuracy = 50f;
         Vector3 currentKeyVector = Vector3.zero;
+        [Tooltip("Acc from small amount of good bad guesses vary very much 50%->30% -> 80%. If we preset negative and positive answers higt mean change will be around 50%")]
+        public int startingOrcleScoreValues = 50;
         int positiveGuesses = 0;
         int negativeGuesses = 0;
         [Range(0, 1f)]
         public float algorithmAccuracyLimitToWin = 0.6f;
         IAttackableSVS currentlyAttackedUnit = null;
-        bool fightingShip = false;
+        bool fightingSheep = false;
         [Range(1f, 4f)]
         public float maxDistanceToAttack = 4f;
 
@@ -48,134 +50,141 @@ namespace SVSWolf
             predictionInputSystem = GetComponent<InputPredictorSVS>();
             predictionInputSystem.PrepareThePredictorClass(Vector3.forward);
             startingPosition = transform.position;
+            positiveGuesses = startingOrcleScoreValues;
+            negativeGuesses = startingOrcleScoreValues;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (isFighting == false)
+            if (Static.paused==false)
             {
-                if (sheepFollowing == null)
+
+
+                if (isFighting == false)
                 {
-                    Collider[] contextColliders = Physics.OverlapSphere(transform.position, wolfRadius, sheepMask);
-                    if (contextColliders.Length > 0)
+                    if (sheepFollowing == null)
                     {
-                        sheepFollowing = contextColliders[0].gameObject;
-                        sheepFollowing.GetComponent<FlockAgent3dSVS>().StartFollowingWOlf(gameObject, sheepSpeed);
+                        Collider[] contextColliders = Physics.OverlapSphere(transform.position, wolfRadius, sheepMask);
+                        if (contextColliders.Length > 0)
+                        {
+                            sheepFollowing = contextColliders[0].gameObject;
+                            sheepFollowing.GetComponent<FlockAgent3dSVS>().StartFollowingWOlf(gameObject, sheepSpeed);
+                        }
                     }
+                    else
+                    {
+                        if (Vector3.Distance(sheepFollowing.transform.position, transform.position) > breakUpDistance)
+                        {
+
+                            sheepFollowing.GetComponent<FlockAgent3dSVS>().StopFollowingWolf();
+                            sheepFollowing = null;
+
+
+                        }
+                    }
+                    if ((sheepFollowing != null && (Vector3.Distance(sheepFollowing.transform.position, gameObject.transform.position) < maxDistanceToAttack))
+                        || (followingGuard != null && (Vector3.Distance(followingGuard.transform.position, gameObject.transform.position) < maxDistanceToAttack)))
+                    {
+                        Debug.Log("YOU CAN ATTACK NOW. PRESS Z or X");
+
+                        if (Input.GetKeyDown(KeyForFighting1))
+                        {
+                            lastPrediction = GetVectorFromInput(KeyForFighting1);
+                        }
+                        else if (Input.GetKeyDown(KeyForFighting2))
+                        {
+                            lastPrediction = GetVectorFromInput(KeyForFighting2);
+                        }
+                        if (lastPrediction.magnitude > 0.01f)
+                        {
+                            if (followingGuard != null)
+                            {
+                                if (sheepFollowing != null)
+                                {
+                                    sheepFollowing.GetComponent<FlockAgent3dSVS>().StopFollowingWolf();
+                                    sheepFollowing = null;
+                                }
+                                fightingSheep = false;
+                                currentlyAttackedUnit = (IAttackableSVS)followingGuard;
+                                StartAFight();
+                            }
+                            else
+                            {
+                                fightingSheep = true;
+                                currentlyAttackedUnit = (IAttackableSVS)sheepFollowing.GetComponent<FlockAgent3dSVS>();
+                                StartAFight();
+                            }
+                        }
+                    }
+
                 }
                 else
                 {
-                    if (Vector3.Distance(sheepFollowing.transform.position, transform.position) > breakUpDistance)
-                    {
-
-                        sheepFollowing.GetComponent<FlockAgent3dSVS>().StopFollowingWolf();
-                        sheepFollowing = null;
-
-
-                    }
-                }
-                if ((sheepFollowing != null && (Vector3.Distance(sheepFollowing.transform.position, gameObject.transform.position) < maxDistanceToAttack))
-                    || (followingGuard != null && (Vector3.Distance(followingGuard.transform.position, gameObject.transform.position) < maxDistanceToAttack)))
-                {
-                    Debug.Log("YOU CAN ATTACK NOW. PRESS Z or X");
 
                     if (Input.GetKeyDown(KeyForFighting1))
                     {
-                        lastPrediction = GetVectorFromInput(KeyForFighting1);
+                        currentKeyVector = GetVectorFromInput(KeyForFighting1);
                     }
                     else if (Input.GetKeyDown(KeyForFighting2))
                     {
-                        lastPrediction = GetVectorFromInput(KeyForFighting2);
+                        currentKeyVector = GetVectorFromInput(KeyForFighting2);
                     }
-                    if (lastPrediction.magnitude > 0.01f)
+                    if (Vector3.Distance(Vector3.zero, currentKeyVector) > 0.1f)
                     {
-                        if (followingGuard != null)
+                        timeFromLastClick = 0;
+                        if (Vector3.Distance(currentKeyVector, lastPrediction) < 0.01f)
                         {
-                            if (sheepFollowing != null)
-                            {
-                                sheepFollowing.GetComponent<FlockAgent3dSVS>().StopFollowingWolf();
-                                sheepFollowing = null;
-                            }
-                            
-                            currentlyAttackedUnit = (IAttackableSVS)followingGuard;
-                            StartAFight();
+                            positiveGuesses++;
                         }
                         else
                         {
-                            currentlyAttackedUnit = (IAttackableSVS)sheepFollowing.GetComponent<FlockAgent3dSVS>();
-                            StartAFight();
+                            negativeGuesses++;
                         }
+                        lastPrediction = predictionInputSystem.PredictNextInput(currentKeyVector);
+                        currentKeyVector = Vector3.zero;
+                        accuracy = ((float)(positiveGuesses) / (positiveGuesses + negativeGuesses));
+                        Debug.Log("Algorithm accuracy: " + accuracy);
+                        GameManagerSVS.instance.UpdateFightingMenu(Mathf.Clamp(currentFightTime, 0, fightTime), accuracy);
                     }
-                }
+                    else
+                    {
+                        timeFromLastClick += Time.deltaTime;
+                    }
 
-            }
-            else
-            {
-
-                if (Input.GetKeyDown(KeyForFighting1))
-                {
-                    currentKeyVector = GetVectorFromInput(KeyForFighting1);
-                }
-                else if (Input.GetKeyDown(KeyForFighting2))
-                {
-                    currentKeyVector = GetVectorFromInput(KeyForFighting2);
-                }
-                if (Vector3.Distance(Vector3.zero, currentKeyVector) > 0.1f)
-                {
-                    timeFromLastClick = 0;
-                    if (Vector3.Distance(currentKeyVector, lastPrediction) < 0.01f)
+                    if (timeFromLastClick > maxInputDelay)
                     {
                         positiveGuesses++;
+                        timeFromLastClick = 0;
+                        accuracy = ((float)(positiveGuesses) / (positiveGuesses + negativeGuesses));
+                        Debug.Log("Algorithm accuracy: " + accuracy);
+                        GameManagerSVS.instance.UpdateFightingMenu(Mathf.Clamp(currentFightTime, 0, fightTime), accuracy);
                     }
-                    else
-                    {
-                        negativeGuesses++;
-                    }
-                    lastPrediction = predictionInputSystem.PredictNextInput(currentKeyVector);
-                    currentKeyVector = Vector3.zero;
-                    accuracy = ((float)(positiveGuesses) / (positiveGuesses + negativeGuesses));
-                    Debug.Log("Algorithm accuracy: " + accuracy);
-                    GameManagerSVS.instance.UpdateFightingMenu(Mathf.Clamp(currentFightTime, 0, fightTime), accuracy);
-                }
-                else
-                {
-                    timeFromLastClick += Time.deltaTime;
-                }
 
-                if (timeFromLastClick > maxInputDelay)
-                {
-                    positiveGuesses++;
-                    timeFromLastClick = 0;
-                    accuracy = ((float)(positiveGuesses) / (positiveGuesses + negativeGuesses));
-                    Debug.Log("Algorithm accuracy: " + accuracy);
-                    GameManagerSVS.instance.UpdateFightingMenu(Mathf.Clamp(currentFightTime, 0, fightTime), accuracy);
-                }
-
-                currentFightTime += Time.deltaTime;
-                if (currentFightTime >= fightTime)
-                {
-                    currentFightTime = 0;
-                    isFighting = false;
-                    lastPrediction = Vector3.zero;
-                    Debug.Log("END FIGHT ACCURACY: " + accuracy);
-                    GameManagerSVS.instance.UpdateFightingMenu(Mathf.Clamp(currentFightTime,0,fightTime), accuracy);
-                    GameManagerSVS.instance.FightOff();
-                    if (accuracy <= algorithmAccuracyLimitToWin)
+                    currentFightTime += Time.deltaTime;
+                    if (currentFightTime >= fightTime)
                     {
-                        OnWInFight();
-                        currentlyAttackedUnit.OnLoseFight();
-                    }
-                    else
-                    {
-                        OnLoseFight();
-                        currentlyAttackedUnit.OnWInFight();
-                    }
-                    currentlyAttackedUnit = null;
+                        currentFightTime = 0;
+                        isFighting = false;
+                        lastPrediction = Vector3.zero;
+                        Debug.Log("END FIGHT ACCURACY: " + accuracy);
+                        GameManagerSVS.instance.UpdateFightingMenu(Mathf.Clamp(currentFightTime, 0, fightTime), accuracy);
+                        GameManagerSVS.instance.FightOff();
+                        if (accuracy <= algorithmAccuracyLimitToWin)
+                        {
+                            OnWInFight();
+                            currentlyAttackedUnit.OnLoseFight();
+                        }
+                        else
+                        {
+                            OnLoseFight();
+                            currentlyAttackedUnit.OnWInFight();
+                        }
+                        currentlyAttackedUnit = null;
 
+                    }
                 }
             }
-
 
         }
 
@@ -213,25 +222,25 @@ namespace SVSWolf
             {
                 currentlyAttackedUnit = (IAttackableSVS)followingGuard;
             }
-            negativeGuesses = 0;
-            positiveGuesses = 0;
+            positiveGuesses = startingOrcleScoreValues;
+            negativeGuesses = startingOrcleScoreValues;
             Debug.Log("Staring a fight");
             isFighting = true;
             GetComponent<PlayerInputSVS>().movementBlockDuringFIght = isFighting;
         }
         public void OnWInFight()
         {
-            if (fightingShip)
+            if (fightingSheep)
             {
                 sheepFollowing = null;
-                GameManagerSVS.instance.Killed(EnemyType.Sheep);
+                
             }
             else
             {
                 followingGuard = null;
-                GameManagerSVS.instance.Killed(EnemyType.Dog);
+                
             }
-            fightingShip = false;
+            fightingSheep = false;
 
             GetComponent<PlayerInputSVS>().movementBlockDuringFIght = false;
         }

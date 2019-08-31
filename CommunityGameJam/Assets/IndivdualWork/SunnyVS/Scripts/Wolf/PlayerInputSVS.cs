@@ -24,7 +24,7 @@ namespace SVSInput
 
         private void FixedUpdate()
         {
-            if (movementBlockDuringFIght == false)
+            if (movementBlockDuringFIght == false && Static.paused==false)
             {
                 transform.Rotate(0, horizontal * rotationSpeed, 0);
                 float curSpeed = speed * vertical;

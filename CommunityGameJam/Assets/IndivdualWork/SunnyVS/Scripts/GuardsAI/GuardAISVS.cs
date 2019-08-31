@@ -1,4 +1,5 @@
 ﻿using SVSAI;
+using SVSGame;
 using SVSWolf;
 using System;
 using System.Collections;
@@ -15,9 +16,10 @@ namespace SVSGuards
         public float playerDistance;
         public float aiAwarnessDistance = 10f;
         public float aiChaseDIstance = 20f;
-        public float AIMovementSpeed;
+        public float agentSpeedDefault = 3.5f;
+        public float AIChaseSpeed = 10f;
         public float damping;
-        float caughtPlayerStoppingDistance = 4f;
+        float caughtPlayerStoppingDistance = 6f;
         
 
         public Transform[] navPoint;
@@ -45,6 +47,7 @@ namespace SVSGuards
             }
             agent.autoBraking = false;
             player = FindObjectOfType<WolfActionsSVS>().transform;
+            agent.speed = agentSpeedDefault;
         }
 
         private void Update()
@@ -85,15 +88,17 @@ namespace SVSGuards
                 if (playerDistance < aiChaseDIstance)
                 {
                     
-                    if (playerDistance < caughtPlayerStoppingDistance)
+                    if (playerDistance <= caughtPlayerStoppingDistance)
                     {
+                        agent.isStopped = true;
+                        
                         WolfActionsSVS wolfScript = player.gameObject.GetComponent<WolfActionsSVS>();
                         if (wolfScript.isFighting == false)
                         {
                             
                             wolfScript.StartAFight();
                         }
-                        else if(wolfScript.followingGuard != this)
+                        else if(wolfScript.followingGuard != this || wolfScript.sheepFollowing!=null)
                         {
                             wolfScript.FInishFightBeforeTime();
                         }
@@ -137,12 +142,15 @@ namespace SVSGuards
 
         private void Chase()
         {
-            transform.Translate(Vector3.forward * AIMovementSpeed * Time.deltaTime);
-            
+            //transform.Translate(Vector3.forward * AIChaseSpeed * Time.deltaTime);
+            agent.speed = AIChaseSpeed;
+            agent.stoppingDistance = caughtPlayerStoppingDistance;
+            agent.SetDestination(player.transform.position);
         }
 
         private void TravelToNextPoint()
         {
+            agent.speed = agentSpeedDefault;
             if (navPoint.Length == 0)
             {
                 return;
@@ -174,8 +182,9 @@ namespace SVSGuards
 
         public void OnLoseFight()
         {
+            GameManagerSVS.instance.Killed(EnemyType.Dog);
             Destroy(gameObject);
-            Debug.Log("Guard down");
+            //Debug.Log("Guard down");
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using SVSAI;
+using SVSGame;
 using SVSWolf;
 using System.Collections;
 using System.Collections.Generic;
@@ -69,8 +70,10 @@ namespace SVSFlocking
 
         public void OnLoseFight()
         {
+            GameManagerSVS.instance.Killed(EnemyType.Sheep);
             Destroy(gameObject);
-            Debug.Log("Sheep eaten - add points UI");
+
+            //Debug.Log("Sheep eaten - add points UI");
         }
 
         private void Update()

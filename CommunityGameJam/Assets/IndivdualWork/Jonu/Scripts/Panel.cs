@@ -28,6 +28,7 @@ public class Panel : MonoBehaviour
     public void Enter()
     {
         anim.SetBool(animBoolName, true);
+
     }
 
     // hide the panel. Used by buttons etc
