@@ -1,9 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
-    Assembly-CSharp-Editor.dll:
-    - ReplaceWithPrefab
     Assembly-CSharp.dll:
     - CameraControl
+    - Level
     - Panel
     - Pause
     - SVSFlocking.Alignment3dSVS
@@ -16,11 +15,16 @@ ScriptsOnlyBuild:
     - SVSFlocking.SameFlockFilter3dSVS
     - SVSFlocking.StayInRadiusBehaviour3dSVS
     - SVSFlocking.SteeredCohesionBehaviour3dSVS
+    - SVSGame.GameManagerSVS
     - SVSGuards.GuardAISVS
     - SVSInput.PlayerInputSVS
+    - SVSPredictor.InputPredictorSVS
     - SVSWolf.FollowWolfSVS
     - SVSWolf.WolfActionsSVS
+    - Sounds
     - TargetMovement
+    - destroyMe
+    - instantiateEffectCaller
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineComposer
@@ -55,8 +59,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.LWRP.ForwardRendererData
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineAsset
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
-    Unity.ShaderGraph.Editor.dll:
-    - UnityEditor.ShaderGraph.Drawing.MaterialGraphEditWindow
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -86,7 +88,7 @@ ScriptsOnlyBuild:
     - PhotosynthesizerSeed
     - PhotosynthesizerVolume
   sceneClasses:
-    Assets/IndivdualWork/Ztif/Scenes/Sheepherder_Day6_new.unity:
+    Assets/IndivdualWork/Ztif/Scenes/Sheepherder_Day7_ztif.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -121,6 +123,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -142,85 +148,97 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10002}
     - Class: 114
-      Script: {instanceID: 10086}
+      Script: {instanceID: 10044}
     - Class: 114
-      Script: {instanceID: 10136}
+      Script: {instanceID: 10088}
     - Class: 114
-      Script: {instanceID: 10314}
+      Script: {instanceID: 10138}
     - Class: 114
-      Script: {instanceID: 10522}
+      Script: {instanceID: 10316}
     - Class: 114
-      Script: {instanceID: 10532}
+      Script: {instanceID: 10408}
     - Class: 114
-      Script: {instanceID: 10582}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 10730}
+      Script: {instanceID: 10536}
     - Class: 114
-      Script: {instanceID: 10754}
+      Script: {instanceID: 10586}
     - Class: 114
-      Script: {instanceID: 11104}
+      Script: {instanceID: 10734}
     - Class: 114
-      Script: {instanceID: 11156}
+      Script: {instanceID: 10758}
     - Class: 114
-      Script: {instanceID: 11340}
+      Script: {instanceID: 11110}
     - Class: 114
-      Script: {instanceID: 11550}
+      Script: {instanceID: 11162}
     - Class: 114
-      Script: {instanceID: 11584}
+      Script: {instanceID: 11314}
     - Class: 114
-      Script: {instanceID: 11692}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11712}
+      Script: {instanceID: 11556}
     - Class: 114
-      Script: {instanceID: 11758}
+      Script: {instanceID: 11590}
     - Class: 114
-      Script: {instanceID: 11940}
+      Script: {instanceID: 11632}
     - Class: 114
-      Script: {instanceID: 12132}
+      Script: {instanceID: 11700}
     - Class: 114
-      Script: {instanceID: 12332}
+      Script: {instanceID: 11720}
     - Class: 114
-      Script: {instanceID: 12336}
+      Script: {instanceID: 11766}
     - Class: 114
-      Script: {instanceID: 12358}
+      Script: {instanceID: 11948}
     - Class: 114
-      Script: {instanceID: 12434}
+      Script: {instanceID: 12140}
     - Class: 114
-      Script: {instanceID: 12456}
+      Script: {instanceID: 12340}
     - Class: 114
-      Script: {instanceID: 12488}
+      Script: {instanceID: 12344}
     - Class: 114
-      Script: {instanceID: 12558}
+      Script: {instanceID: 12366}
     - Class: 114
-      Script: {instanceID: 12562}
+      Script: {instanceID: 12442}
     - Class: 114
-      Script: {instanceID: 12578}
+      Script: {instanceID: 12464}
     - Class: 114
-      Script: {instanceID: 12612}
+      Script: {instanceID: 12496}
     - Class: 114
-      Script: {instanceID: 12734}
+      Script: {instanceID: 12550}
     - Class: 114
-      Script: {instanceID: 12774}
+      Script: {instanceID: 12568}
     - Class: 114
-      Script: {instanceID: 12838}
+      Script: {instanceID: 12572}
     - Class: 114
-      Script: {instanceID: 12866}
+      Script: {instanceID: 12588}
     - Class: 114
-      Script: {instanceID: 12880}
+      Script: {instanceID: 12622}
     - Class: 114
-      Script: {instanceID: 13198}
+      Script: {instanceID: 12744}
     - Class: 114
-      Script: {instanceID: 13236}
+      Script: {instanceID: 12784}
     - Class: 114
-      Script: {instanceID: 13266}
+      Script: {instanceID: 12848}
     - Class: 114
-      Script: {instanceID: 13338}
+      Script: {instanceID: 12876}
     - Class: 114
-      Script: {instanceID: 13372}
+      Script: {instanceID: 12890}
     - Class: 114
-      Script: {instanceID: 13548}
+      Script: {instanceID: 13208}
     - Class: 114
-      Script: {instanceID: 13592}
+      Script: {instanceID: 13246}
+    - Class: 114
+      Script: {instanceID: 13276}
+    - Class: 114
+      Script: {instanceID: 13348}
+    - Class: 114
+      Script: {instanceID: 13382}
+    - Class: 114
+      Script: {instanceID: 13474}
+    - Class: 114
+      Script: {instanceID: 13560}
+    - Class: 114
+      Script: {instanceID: 13606}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -296,7 +314,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: 89dbf99777ec26c7ba140fe142d873ae
+      Hash: 24d431c92dea13f5cc0e1487b610ddee
     assemblyName: Assembly-CSharp.dll
     namespaceName: SVSWolf
     className: WolfActionsSVS
@@ -320,7 +338,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 9b902f9878f6eadf0cdce6f7d4045aa5
+      Hash: 48b2852fe12bed706d0603f7ca1b75b6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Panel
@@ -330,6 +348,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: SVSFlocking
     className: SameFlockFilter3dSVS
+  - hash:
+      serializedVersion: 2
+      Hash: da5105de6a6cfbde50e7cdc590407abd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: instantiateEffectCaller
   - hash:
       serializedVersion: 2
       Hash: a2113831d3323f931007e1b3812dc814
@@ -446,7 +470,7 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 22e49bd8eb578a7bdd6d71b8196cb9b5
+      Hash: 00aca4989ae2b802e0f49903b05e2fd3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Level
@@ -668,7 +692,7 @@ ScriptsOnlyBuild:
     className: CinemachinePOV
   - hash:
       serializedVersion: 2
-      Hash: 011b7ff866a7e47f72d112d73bae215b
+      Hash: 37cf34b60c37df60c57dbca391e33a0e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Sounds
@@ -774,6 +798,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineComposer
+  - hash:
+      serializedVersion: 2
+      Hash: 71e41e59a9b9d3d35a3f2005e6919d13
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: destroyMe
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1082,6 +1112,12 @@ ScriptsOnlyBuild:
     className: AvoidanceSVS
   - hash:
       serializedVersion: 2
+      Hash: 0880b30b97266268dd6c5edaaf8c4f61
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: SVSGame
+    className: GameManagerSVS
+  - hash:
+      serializedVersion: 2
       Hash: 9bcc685c411830ca89b9f2cfaee0f63b
     assemblyName: Assembly-CSharp.dll
     namespaceName: SVSFlocking
@@ -1148,7 +1184,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 5c2419f01c9fafe0f07c775f3286a929
+      Hash: fe9daa963f96eaec52c30f0879bad8b8
     assemblyName: Assembly-CSharp.dll
     namespaceName: SVSFlocking
     className: FlockAgent3dSVS
@@ -1184,7 +1220,7 @@ ScriptsOnlyBuild:
     className: AlignmentSVS
   - hash:
       serializedVersion: 2
-      Hash: bd0b842ca90d1c1807d10344574c95b4
+      Hash: 16fa4c2c0cc7e8e964a2c569f46dd161
     assemblyName: Assembly-CSharp.dll
     namespaceName: SVSGuards
     className: GuardAISVS
@@ -1232,7 +1268,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 02ff7559b49228eeb6c36b3e75ef39ca
+      Hash: d9004fd264e3a157def4961fb6bd1b77
     assemblyName: Assembly-CSharp.dll
     namespaceName: SVSInput
     className: PlayerInputSVS
@@ -1334,6 +1370,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Speedometer
+  - hash:
+      serializedVersion: 2
       Hash: 31aaf1b0d478f69639405ed5e51607b0
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -1344,6 +1386,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner
     className: PlaymodeTestsController
+  - hash:
+      serializedVersion: 2
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: wolfmove
   - hash:
       serializedVersion: 2
       Hash: 0852116b29df10ce3f9156850d406521
@@ -1418,5 +1466,5 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 20
   scenePathNames:
-  - Assets/IndivdualWork/Ztif/Scenes/Sheepherder_Day6_new.unity
-  playerPath: /Users/steffenoftedal/Desktop/day6-6
+  - Assets/IndivdualWork/Ztif/Scenes/Sheepherder_Day7_ztif.unity
+  playerPath: /Users/steffenoftedal/Desktop/finalhours2
