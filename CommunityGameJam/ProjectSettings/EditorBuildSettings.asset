@@ -15,6 +15,18 @@ EditorBuildSettings:
     path: Assets/IndivdualWork/Ztif/Scenes/Sheepherder_Day6_new.unity
     guid: a11bfb4c7047d4ee888def1eb756fcf7
   - enabled: 1
-    path: Assets/IndivdualWork/Ztif/Scenes/Sheepherder_Day7_ztif.unity
+    path: Assets/IndivdualWork/Ztif/Scenes/lvl1.unity
+    guid: d3a9085e958ee4ed482277f937aada3b
+  - enabled: 1
+    path: Assets/IndivdualWork/Ztif/Scenes/lvl2.unity
+    guid: 99dbf1665f7ca4e379596b725bef48b2
+  - enabled: 1
+    path: Assets/IndivdualWork/Ztif/Scenes/lvl3.unity
     guid: 53066bee84e1043df979329eeb9a4e82
+  - enabled: 1
+    path: Assets/IndivdualWork/Ztif/Scenes/lvl4.unity
+    guid: eaf7e71c93f1842028b5f670831e0f63
+  - enabled: 1
+    path: Assets/IndivdualWork/Ztif/Scenes/lvl5.unity
+    guid: 280c349b9b615489da3d3b8634e715fe
   m_configObjects: {}

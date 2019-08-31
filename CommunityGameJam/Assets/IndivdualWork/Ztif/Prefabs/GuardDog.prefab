@@ -14799,7 +14799,7 @@ Transform:
   - {fileID: 7614124194500197796}
   - {fileID: 507208647649507847}
   - {fileID: 3718933099336521626}
-  - {fileID: 3170741203977078445}
+  - {fileID: 1808592318416205664}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14871,7 +14871,7 @@ MonoBehaviour:
   fieldOfViewAngle: 110
   playerInSIght: 0
   isFIghting: 0
-  particleBlood: {fileID: 3176473472073881467}
+  particleBlood: {fileID: 1805042649743713974}
 --- !u!114 &6586721239684959524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19975,13 +19975,23 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4744227552805776856}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6215392240180546364
+--- !u!1001 &7158567527958936305
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 6586721239861316423}
     m_Modifications:
+    - target: {fileID: 8814841365579177031, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_Name
+      value: BloodSplat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8814841365579177031, guid: 127fb677db07741bcbb8f069e002bbc9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19990,7 +20000,7 @@ PrefabInstance:
     - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
         type: 3}
@@ -20005,7 +20015,7 @@ PrefabInstance:
     - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
         type: 3}
@@ -20015,7 +20025,7 @@ PrefabInstance:
     - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.00000028088027
       objectReference: {fileID: 0}
     - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
         type: 3}
@@ -20030,34 +20040,24 @@ PrefabInstance:
     - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: -179.99998
       objectReference: {fileID: 0}
     - target: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8814841365579177031, guid: 127fb677db07741bcbb8f069e002bbc9,
-        type: 3}
-      propertyPath: m_Name
-      value: BloodSplat
-      objectReference: {fileID: 0}
-    - target: {fileID: 8814841365579177031, guid: 127fb677db07741bcbb8f069e002bbc9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127fb677db07741bcbb8f069e002bbc9, type: 3}
---- !u!1 &3176473472073881467 stripped
+--- !u!1 &1805042649743713974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8814841365579177031, guid: 127fb677db07741bcbb8f069e002bbc9,
     type: 3}
-  m_PrefabInstance: {fileID: 6215392240180546364}
+  m_PrefabInstance: {fileID: 7158567527958936305}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &3170741203977078445 stripped
+--- !u!4 &1808592318416205664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8809390639148027281, guid: 127fb677db07741bcbb8f069e002bbc9,
     type: 3}
-  m_PrefabInstance: {fileID: 6215392240180546364}
+  m_PrefabInstance: {fileID: 7158567527958936305}
   m_PrefabAsset: {fileID: 0}
