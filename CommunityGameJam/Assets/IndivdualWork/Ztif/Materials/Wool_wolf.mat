@@ -137,7 +137,7 @@ Material:
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _DesignColor: {r: 0.90959036, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PaintColor: {r: 1, g: 1, b: 1, a: 1}
+    - _PaintColor: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _WorldSpaceLightPos0: {r: 2.26, g: 0.5, b: 0, a: 0}
 --- !u!114 &4285398733346935640
