@@ -7,6 +7,7 @@ using SVSAI;
 using SVSPredictor;
 using SVSInput;
 using SVSGame;
+using UnityEngine.UI;
 
 namespace SVSWolf
 {
@@ -48,10 +49,22 @@ namespace SVSWolf
         float waitedAfterWasTiredTime = 0;
         public GameObject wolf_sheep;
         public GameObject wolf_no_sheep;
-
+        public Panel fightPanel;
+        public RectTransform arrowPanel;
+        public Color colorToSetFightingPanelTo;
+        private bool uiActive = false;
         // Start is called before the first frame update
         void Start()
         {
+            colorToSetFightingPanelTo = new Color(91, 91, 91);
+            if (fightPanel == null)
+            {
+                fightPanel = GameObject.Find("FightPanel").GetComponent<Panel>();
+            }
+            if (arrowPanel == null)
+            {
+                arrowPanel = GameObject.Find("Needle").GetComponent<RectTransform>();
+            }
             SetTired(true);
             predictionInputSystem = GetComponent<InputPredictorSVS>();
             predictionInputSystem.PrepareThePredictorClass(Vector3.forward);
@@ -68,6 +81,8 @@ namespace SVSWolf
                 if (isTired)
                 {
                     waitedAfterWasTiredTime += Time.deltaTime;
+
+                    DisableFightUI();
                     if (waitedAfterWasTiredTime >= tiredStateLength)
                     {
                         SetTired(false);
@@ -104,7 +119,7 @@ namespace SVSWolf
                                                 || (followingGuard != null && (Vector3.Distance(followingGuard.transform.position, gameObject.transform.position) < maxDistanceToAttack))
                                                 )
                         {
-                            Debug.Log("YOU CAN ATTACK NOW. PRESS Z or X");
+                            EnableFightUI();
 
                             if (Input.GetKeyDown(KeyForFighting1))
                             {
@@ -164,7 +179,7 @@ namespace SVSWolf
                         lastPrediction = predictionInputSystem.PredictNextInput(currentKeyVector);
                         currentKeyVector = Vector3.zero;
                         accuracy = ((float)(positiveGuesses) / (positiveGuesses + negativeGuesses));
-                        Debug.Log("Algorithm accuracy: " + accuracy);
+                        SetUIValue(accuracy);
                         GameManagerSVS.instance.UpdateFightingMenu(Mathf.Clamp(currentFightTime, 0, fightTime), accuracy);
                     }
                     else
@@ -177,7 +192,7 @@ namespace SVSWolf
                         positiveGuesses++;
                         timeFromLastClick = 0;
                         accuracy = ((float)(positiveGuesses) / (positiveGuesses + negativeGuesses));
-                        Debug.Log("Algorithm accuracy: " + accuracy);
+                        SetUIValue(accuracy);
                         GameManagerSVS.instance.UpdateFightingMenu(Mathf.Clamp(currentFightTime, 0, fightTime), accuracy);
                     }
 
@@ -187,7 +202,8 @@ namespace SVSWolf
                         currentFightTime = 0;
                         isFighting = false;
                         lastPrediction = Vector3.zero;
-                        Debug.Log("END FIGHT ACCURACY: " + accuracy);
+                        SetUIValue(accuracy);
+                        arrowPanel.rotation = Quaternion.Euler(0, 0, 0);
                         GameManagerSVS.instance.UpdateFightingMenu(Mathf.Clamp(currentFightTime, 0, fightTime), accuracy);
                         GameManagerSVS.instance.FightOff();
                         SetTired(true);
@@ -327,6 +343,7 @@ namespace SVSWolf
 
         private void SetTired(bool val)
         {
+            
             if (val)
             {
                 wolf_no_sheep.SetActive(true);
@@ -334,10 +351,59 @@ namespace SVSWolf
             }
             else
             {
+                uiActive = true;
                 wolf_no_sheep.SetActive(false);
                 wolf_sheep.SetActive(true);
             }
             isTired = val;
+        }
+
+        private void DisableFightUI()
+        {
+            uiActive = false;
+            foreach (Transform child in fightPanel.transform)
+            {
+                Image img = child.gameObject.GetComponent<Image>();
+                if (img == null)
+                {
+                    img = child.GetComponentInChildren<Image>();
+                }
+                img.color = Color.gray;
+            }
+        }
+
+        private void EnableFightUI()
+        {
+            uiActive = true;
+            foreach (Transform child in fightPanel.transform)
+            {
+                Image img = child.gameObject.GetComponent<Image>();
+                if (img == null)
+                {
+                    img = child.GetComponentInChildren<Image>();
+                }
+                img.color = Color.white;
+            }
+        }
+
+
+        public void SetUIValue(float value)
+        {
+            float tempVal = value - (algorithmAccuracyLimitToWin - 0.5f);
+            float val = scale(0.4f, 0.6f, 0, 198, Mathf.Clamp(tempVal, 0.4f,0.6f));
+            val -= 99;
+            Debug.Log("Accuracy " + value+" rot value: "+(val));
+            arrowPanel.rotation = Quaternion.Euler(0, 0, val);
+        }
+
+        public float scale(float OldMin, float OldMax, float NewMin, float NewMax, float OldValue)
+        {
+
+            float OldRange = (OldMax - OldMin);
+            float NewRange = (NewMax - NewMin);
+            float NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin;
+
+            return (NewValue);
         }
     }
 }
