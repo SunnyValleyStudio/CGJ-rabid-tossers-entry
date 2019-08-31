@@ -1658,16 +1658,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3652326494348233780, guid: 1c1b779a31fb94726a948deb8cd761dc,
-        type: 3}
-      propertyPath: m_Name
-      value: Seed - Rocks
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652326494348233780, guid: 1c1b779a31fb94726a948deb8cd761dc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 357176628986068519, guid: 1c1b779a31fb94726a948deb8cd761dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1722,6 +1712,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 1c1b779a31fb94726a948deb8cd761dc,
+        type: 3}
+      propertyPath: m_Name
+      value: Seed - Rocks
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 1c1b779a31fb94726a948deb8cd761dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c1b779a31fb94726a948deb8cd761dc, type: 3}
@@ -3359,14 +3359,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 31223351, guid: e0425fd181fc17045bb1f72364a4e6bb, type: 3}
-      propertyPath: flock
+      propertyPath: bloodEffect
       value: 
-      objectReference: {fileID: 1179313088}
-    - target: {fileID: 31223351, guid: e0425fd181fc17045bb1f72364a4e6bb, type: 3}
-      propertyPath: fightPanel
-      value: 
-      objectReference: {fileID: 1312369240}
-    m_RemovedComponents: []
+      objectReference: {fileID: 2110838722}
+    m_RemovedComponents:
+    - {fileID: 9183410916919442772, guid: e0425fd181fc17045bb1f72364a4e6bb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e0425fd181fc17045bb1f72364a4e6bb, type: 3}
 --- !u!1 &137359749
 GameObject:
@@ -9931,16 +9928,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Seed - Shrub
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 357176628986068519, guid: 549a2e1e2563c4d49b519f675aadc8f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9995,6 +9982,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Seed - Shrub
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 549a2e1e2563c4d49b519f675aadc8f2, type: 3}
@@ -12019,16 +12016,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Seed - Shrub (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 357176628986068519, guid: 549a2e1e2563c4d49b519f675aadc8f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12083,6 +12070,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Seed - Shrub (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 549a2e1e2563c4d49b519f675aadc8f2, type: 3}
@@ -12359,11 +12356,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Seed - Shrub (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 357176628986068519, guid: 549a2e1e2563c4d49b519f675aadc8f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12418,6 +12410,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Seed - Shrub (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 549a2e1e2563c4d49b519f675aadc8f2, type: 3}
@@ -19411,11 +19408,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Seed - Shrub (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 357176628986068519, guid: 549a2e1e2563c4d49b519f675aadc8f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19470,6 +19462,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Seed - Shrub (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 549a2e1e2563c4d49b519f675aadc8f2, type: 3}
@@ -19720,16 +19717,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Seed - Shrub (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 357176628986068519, guid: 549a2e1e2563c4d49b519f675aadc8f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19784,6 +19771,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Seed - Shrub (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 549a2e1e2563c4d49b519f675aadc8f2, type: 3}
@@ -21825,16 +21822,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Seed - Shrub (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 357176628986068519, guid: 549a2e1e2563c4d49b519f675aadc8f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21889,6 +21876,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Seed - Shrub (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 549a2e1e2563c4d49b519f675aadc8f2, type: 3}
@@ -26047,11 +26044,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Seed - Shrub (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 357176628986068519, guid: 549a2e1e2563c4d49b519f675aadc8f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26106,6 +26098,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Seed - Shrub (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 549a2e1e2563c4d49b519f675aadc8f2, type: 3}
@@ -28522,16 +28519,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Seed - Shrub (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 357176628986068519, guid: 549a2e1e2563c4d49b519f675aadc8f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28586,6 +28573,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Seed - Shrub (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 549a2e1e2563c4d49b519f675aadc8f2, type: 3}
@@ -28667,6 +28664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1312369239}
+  introcam: {fileID: 0}
   animBoolName: enter
   startingState: 1
 --- !u!222 &1312369241
@@ -30766,11 +30764,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Seed - Shrub (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 357176628986068519, guid: 549a2e1e2563c4d49b519f675aadc8f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30825,6 +30818,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Seed - Shrub (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 549a2e1e2563c4d49b519f675aadc8f2, type: 3}
@@ -36897,11 +36895,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
-        type: 3}
-      propertyPath: m_Name
-      value: Seed - Shrub (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 357176628986068519, guid: 549a2e1e2563c4d49b519f675aadc8f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36956,6 +36949,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 549a2e1e2563c4d49b519f675aadc8f2,
+        type: 3}
+      propertyPath: m_Name
+      value: Seed - Shrub (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 549a2e1e2563c4d49b519f675aadc8f2, type: 3}
@@ -38757,11 +38755,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3652326494348233780, guid: 1c1b779a31fb94726a948deb8cd761dc,
-        type: 3}
-      propertyPath: m_Name
-      value: Seed - Rocks (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 357176628986068519, guid: 1c1b779a31fb94726a948deb8cd761dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38816,6 +38809,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652326494348233780, guid: 1c1b779a31fb94726a948deb8cd761dc,
+        type: 3}
+      propertyPath: m_Name
+      value: Seed - Rocks (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c1b779a31fb94726a948deb8cd761dc, type: 3}
@@ -44952,6 +44950,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107742800}
   m_Mesh: {fileID: 6924165635816932035, guid: 02102aac98b024d82868848aa4c7b13e, type: 3}
+--- !u!1 &2110838722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4352060551394506870, guid: e0425fd181fc17045bb1f72364a4e6bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 136779728}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2111161504
 GameObject:
   m_ObjectHideFlags: 0

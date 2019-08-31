@@ -211,6 +211,7 @@ void Update()
                                 GameManagerSVS.instance.FightOff();
                                 SetTired(true);
                                 waitedAfterWasTiredTime = 0;
+                                bloodEffect.SetActive(false);
                                 if (accuracy <= algorithmAccuracyLimitToWin)
                                 {
 
@@ -259,7 +260,7 @@ public void StartAFight()
         if (isFighting == false)
         {
                 if (isPlayed == false)
-                {  Instantiate(bloodEffect, effectLocator.transform.position,  Quaternion.identity);
+                {  //Instantiate(bloodEffect, effectLocator.transform.position,  Quaternion.identity);
                    isPlayed = true;}
 
                 wolf_no_sheep.SetActive(true);
@@ -277,6 +278,7 @@ public void StartAFight()
                 negativeGuesses = startingOrcleScoreValues;
                 Debug.Log("Staring a fight");
                 isFighting = true;
+                bloodEffect.SetActive(true);
                 GetComponent<PlayerInputSVS>().movementBlockDuringFIght = isFighting;
         }
 

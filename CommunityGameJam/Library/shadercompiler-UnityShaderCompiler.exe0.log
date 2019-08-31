@@ -1,2 +1,66 @@
 Base path: 'C:/Program Files/Unity/Hub/Editor/2019.2.2f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.2.2f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
+Cmd: preprocess
+  insize=452 outsize=452 ok=1
+Cmd: preprocess
+  insize=3608 outsize=1262 ok=1
+Cmd: preprocess
+  insize=3652 outsize=1674 ok=1
+Cmd: preprocess
+  insize=4848 outsize=3386 ok=1
+Cmd: preprocess
+  insize=3606 outsize=1310 ok=1
+Cmd: preprocess
+  insize=1097 outsize=958 ok=1
+Cmd: preprocess
+  insize=10875 outsize=4001 ok=1
+Cmd: preprocess
+  insize=13586 outsize=7527 ok=1
+Cmd: preprocess
+  insize=3615 outsize=2669 ok=1
+Cmd: preprocess
+  insize=1637 outsize=638 ok=1
+Cmd: preprocess
+  insize=7844 outsize=2494 ok=1
+Cmd: preprocess
+  insize=8019 outsize=2766 ok=1
+Cmd: preprocess
+  insize=13069 outsize=6983 ok=1
+Cmd: preprocess
+  insize=2420 outsize=1129 ok=1
+Cmd: preprocess
+  insize=13224 outsize=6933 ok=1
+Cmd: preprocess
+  insize=1371 outsize=372 ok=1
+Cmd: preprocess
+  insize=10864 outsize=3992 ok=1
+Cmd: preprocess
+  insize=4453 outsize=3687 ok=1
+Cmd: preprocess
+  insize=7870 outsize=2504 ok=1
+Cmd: compileSnippet
+  error: 1 plat 4 at Packages/com.unity.render-pipelines.lightweight/Shaders/Particles/ParticlesUnlitForwardPass.hlsl(164): implicit truncation of vector type\nCompiling Vertex program with _EMISSION _COLORADDSUBDIFF_ON
+Platform defines: UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING
+  api=4 type=0 insize=1812 outsize=1242 kw=_EMISSION _COLORADDSUBDIFF_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+Cmd: compileSnippet
+  error: 1 plat 4 at Packages/com.unity.render-pipelines.lightweight/Shaders/Particles/ParticlesUnlitForwardPass.hlsl(164): implicit truncation of vector type\nCompiling Fragment program with _EMISSION _COLORADDSUBDIFF_ON
+Platform defines: UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING
+  api=4 type=1 insize=1812 outsize=786 kw=_EMISSION _COLORADDSUBDIFF_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+Cmd: preprocess
+  insize=64465 outsize=2439 ok=1
+Cmd: preprocess
+  insize=61251 outsize=2185 ok=1
+Cmd: preprocess
+  insize=86674 outsize=2356 ok=1
+Cmd: preprocess
+  insize=68077 outsize=2407 ok=1
+Cmd: preprocess
+  insize=53849 outsize=1827 ok=1
+Cmd: preprocess
+  insize=99194 outsize=2758 ok=1
+Cmd: preprocess
+  insize=80258 outsize=2362 ok=1
+Cmd: preprocess
+  insize=50075 outsize=1841 ok=1
+Cmd: preprocess
+  insize=88047 outsize=2355 ok=1

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Objective
@@ -27,6 +28,7 @@ public class Level : MonoBehaviour
 
     // Pause script
     public Pause pause;
+    public int numberofscenes = 10;
 
     // objectives (sheep, dogs, shepherds)
     public Objective[] objectives = new Objective[3]; 
@@ -131,6 +133,15 @@ public class Level : MonoBehaviour
         }
         if (won)
         {
+            if(numberofscenes< SceneManager.GetActiveScene().buildIndex + 1)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+            {
+                SceneManager.LoadScene(0);
+            }
+            
             pause.Won();
         }
     }
